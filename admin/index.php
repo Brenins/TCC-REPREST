@@ -1,4 +1,15 @@
+<?php
+    //Iniciar o Uso da sessao
 
+    session_start();
+
+
+    //Banco conne
+
+    require "../config.php";
+
+
+    ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -59,7 +70,36 @@
 </head>
 
 <body id="page-top">
+    <?php
+        require "funcoes.php";
 
+        //Verificar login existente
+        if(!isset($_SESSION["usuario"])){
+            //Inserir tela de login
+            require "paginas/login.php";
+        }else{
+            $page = "paginas/home";
+            if(isset($_GET["param"])){
+                $page = explode("/",$_GET["param"]);
+                
+                $pasta = $page[0] ?? NULL;
+                $pagina = $page[1] ?? NULL;
+                $id = $page[2] ?? NULL;
+                $page ="{$pasta}/{$pagina}";
+            }
+            $page = "{$page}.php";
+
+
+            //adicionar o header:
+            require "header.php";
+            if(file_exists($page)){
+                require $page;
+            }else{
+                require "paginas/erro.php";
+            }
+            require "footer.php";
+        }
+    ?>
 </body>
 
 </html>
