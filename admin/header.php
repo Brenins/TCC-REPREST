@@ -37,6 +37,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="cadastros/categorias"><i class="fas fa-tags"></i> Categorias</a>
                 <a class="collapse-item" href="cadastros/produtos"><i class="fas fa-gift"></i> Produtos</a>
+                <a class="collapse-item" href="cadastros/tipo"><i class="fas fa-users"></i> Tipo de Usuário</a>
             </div>
         </div>
     </li>
