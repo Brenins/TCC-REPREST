@@ -49,5 +49,5 @@
     }
 
     //mostrar uma mensagem de rro
-    mensagemErro("Requisição Inválida")
+    mensagemErro("Requisição Inválida");
 ?>

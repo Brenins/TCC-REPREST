@@ -27,7 +27,7 @@
             </thead>
             <tbody>
                 <?php                 
-                    $consulta = $pdo->prepare("select * from tipo order by id");
+                    $consulta = $pdo->prepare("select * from tipo order by tipo");
                     $consulta->execute();
 
                     while($dados = $consulta->fetch(PDO::FETCH_OBJ)
