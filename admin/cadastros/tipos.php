@@ -23,16 +23,17 @@
         </div>
     </div>
     <div class="card-body">
-        <form name="formCadastro" method="post" action="salvar/tipos" data-parsley-validate=""></form>
-        <input type="text" readonly name="id" id="id"
-        class="form-control" value="<?=$id?>">
-        <label for="nome">Nome do Tipo:</label>
-        <input type="text" name="tipo" id="tipo"
-        class="form-control" required
-        data-parsley-required-message="Insira o nome do tipo corretamente."
-        value="<?=@$tipo?>">
-        <br>
-        <button type="submit" class="btn btn-success">
-            <i class="fas fa-check"></i>
-        </button>
+        <form name="formCadastro" method="post" action="salvar/tipos" data-parsley-validate="">
+            <input type="text" readonly name="id" id="id"
+            class="form-control" value="<?=$id?>">
+            <label for="nome">Nome do Tipo:</label>
+            <input type="text" name="tipo" id="tipo"
+            class="form-control" required
+            data-parsley-required-message="Insira o nome do tipo corretamente."
+            value="<?=$tipo?>">
+            <br>
+            <button type="submit" class="btn btn-success">
+                <i class="fas fa-check"></i>
+            </button>
+        </form>
 </div>
