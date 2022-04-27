@@ -15,6 +15,8 @@
         $imagem1 = $dados->imagem1;
         $imagem2 = $dados->imagem2;
         $categoria_id = $dados->categoria_id;
+
+        $valor = number_format($valor,2,',','.');
     }
 
 ?>
@@ -59,9 +61,33 @@
             <input type="text" name="valor" id="valor"
             required data-parsley-required-message="Preencha o valor" class="form-control valor"
             value="<?=$valor?>"></input>
+            <label for="imagem1">Imagem 1:</label>
+            <input type="file" name="imagem1" id="imagem1" class="form-control-file border border-dark rounded"></input>
+            <br>
+            <?php
+                if (!empty($imagem1)){
+                    ?>
+                    <img src="../produtos/<?=$imagem1?>" width="200px">
+                    <?php
+                }
+            ?>
+            <br>
+            <label for="imagem1">Imagem 2:</label>
+            <input type="file" name="imagem2" id="imagem2" class="form-control-file border border-dark rounded"></input>
+            <br>
+            <?php
+                if (!empty($imagem2)){
+                    ?>
+                    <img src="../produtos/<?=$imagem2?>" width="200px">
+                    <?php
+                }
+            ?>
+            <br>
             <label for="descricao">Descricao do Produto:</label>
             <textarea rows="5" name="descricao" id="descricao" required
             data-parsley-required-message="Preencha a descricao" class="form-control texto"><?=$descricao?></textarea>
+            <br>
+            <button type="submit" class="btn btn-success"><i class="fas fa-check"></i> Salvar</button>
         </form>
         <script>
             $(document).ready(function(){
@@ -70,6 +96,10 @@
                     thousands:'.',
                     decimal:','
                 });
+                $('.texto').summernote({
+                    height: 400
+                });
+                $('#categoria_id').val(<?=$categoria_id?>);
             })
         </script>
     </div>
