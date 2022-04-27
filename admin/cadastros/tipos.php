@@ -19,7 +19,7 @@
         <h2 class="float-left">Cadastro Tipo de Usuario</h2>
         <div class="float-right">
             <a href="listar/tipos" title="Listar Tipos"
-            class="btn btn-success">Listar Tipos</a>
+            class="btn btn-primary">Listar Tipos</a>
         </div>
     </div>
     <div class="card-body">
@@ -33,7 +33,7 @@
             value="<?=$tipo?>">
             <br>
             <button type="submit" class="btn btn-success">
-                <i class="fas fa-check"></i>
+                <i class="fas fa-check"></i> Cadastrar
             </button>
         </form>
 </div>

@@ -22,7 +22,7 @@
     <div class="card-header">
         <h1 class="float-left">Cadastro de Produtos</h1>
         <div class="float-right">
-            <a href="listar/produtos" class="btn btn-success">
+            <a href="listar/produtos" class="btn btn-primary">
                 Listar Produtos
             </a>
         </div>
@@ -55,6 +55,22 @@
                     }
                 ?>
             </select>
+            <label for="valor">Valor do Produto:</label>
+            <input type="text" name="valor" id="valor"
+            required data-parsley-required-message="Preencha o valor" class="form-control valor"
+            value="<?=$valor?>"></input>
+            <label for="descricao">Descricao do Produto:</label>
+            <textarea rows="5" name="descricao" id="descricao" required
+            data-parsley-required-message="Preencha a descricao" class="form-control texto"><?=$descricao?></textarea>
         </form>
+        <script>
+            $(document).ready(function(){
+                $('.valor').maskMoney({
+                    prefix:'R$ ',
+                    thousands:'.',
+                    decimal:','
+                });
+            })
+        </script>
     </div>
 </div>

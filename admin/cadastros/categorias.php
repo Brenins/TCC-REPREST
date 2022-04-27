@@ -36,7 +36,7 @@
             value="<?=@$nome?>">
             <br>
             <button type="submit" class="btn btn-success">
-                <i class="fas fa-check"></i>
+                <i class="fas fa-check"></i> Cadastrar
             </button>
         </form>
     </div>
