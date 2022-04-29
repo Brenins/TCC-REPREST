@@ -62,8 +62,8 @@
             required data-parsley-required-message="Preencha o valor" class="form-control valor"
             value="<?=$valor?>"></input>
             <label for="imagem1">Imagem 1:</label>
-            <input type="file" name="imagem1" id="imagem1" class="form-control-file border border-dark rounded"></input>
-            <br>
+            <input type="file" name="imagem1" id="imagem1" class="form-control rounded" style="height: 45px"></input>
+            
             <?php
                 if (!empty($imagem1)){
                     ?>
@@ -73,7 +73,7 @@
             ?>
             <br>
             <label for="imagem1">Imagem 2:</label>
-            <input type="file" name="imagem2" id="imagem2" class="form-control-file border border-dark rounded"></input>
+            <input type="file" name="imagem2" id="imagem2" class="form-control rounded" style="height: 45px"></input>
             <br>
             <?php
                 if (!empty($imagem2)){
