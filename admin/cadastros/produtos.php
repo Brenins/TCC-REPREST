@@ -41,7 +41,7 @@
             required data-parsley-required-message="Por favor preencha este campo" 
             class="form-control" value="<?=$nome?>">
             <label for="categoria_id">Selecione a Categoria:</label>
-            <select name="categoria_id" required data-parsley-required-message="Selecione uma categoria." 
+            <select name="categoria_id" id="categoria_id" required data-parsley-required-message="Selecione uma categoria." 
             class="form-control">
                 <option value=""></option>
                 <?php
@@ -93,7 +93,6 @@
         <script>
             $(document).ready(function(){
                 $('.valor').maskMoney({
-                    prefix:'R$ ',
                     thousands:'.',
                     decimal:','
                 });
