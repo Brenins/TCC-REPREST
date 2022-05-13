@@ -20,7 +20,7 @@
     }
 
 ?>
-<div class="card">
+<div class="card shadow-lg">
     <div class="card-header">
         <h1 class="float-left">Cadastro de Produtos</h1>
         <div class="float-right">

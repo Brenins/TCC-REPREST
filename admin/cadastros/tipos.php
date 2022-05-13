@@ -14,7 +14,7 @@
     }
 ?>
 
-<div class="card">
+<div class="card shadow-lg">
     <div class="card-header">
         <h2 class="float-left">Cadastro Tipo de Usuario</h2>
         <div class="float-right">
@@ -36,4 +36,5 @@
                 <i class="fas fa-check"></i> Cadastrar
             </button>
         </form>
+    </div>
 </div>
