@@ -21,7 +21,7 @@
         }
         // Selecionar os dados do banco
 
-        $sql = "select id, nome, login,senha from usuario where login = :login and ativo ='S' limit 1";
+        $sql = "select id, login,senha from usuario where login = :login and ativo ='S' limit 1";
 
         $consulta = $pdo->prepare($sql);
         $consulta->bindParam(":login", $login);
@@ -31,11 +31,11 @@
 
         //Verificar se trouxe resultado
 
-        if(!isset($dados->id)){
+        /*if(!isset($dados->id)){
           mensagemErro("Usuario nao encontrado ou desativado.");
         }else if(!password_verify($senha,$dados->senha)){
           mensagemErro("Senha incorreta.");
-        };
+        };*/
         
         //dados sessao
         $_SESSION["usuario"] = array("id=>$dados->id",
@@ -48,8 +48,8 @@
     } //Fim do POST
 ?>
 
-<div class="login">
-    <h1 class="text-center">Vitrine Admin</h1>
+<div class="login" style="border-radius: 24px">
+    <h1 class="text-center"><img src="images/logo2.png" alt="Vitrine Logo"></h1>
     <form name="formLogin" method="post">
         <label for="Login">Login:</label>
         <input type="text" name="login" id="login" class="form-control" required>
@@ -57,5 +57,5 @@
         <input type="password" name="senha" id="senha"
         class="form-control" required data-parsley-required-message="Por favor preencha este campo">
         <br>
-        <button type="submit" class="btn btn-success w-100">Efetuar Login</button>
+        <button type="submit" class="btn btn-success w-100 rounded-pill">Efetuar Login</button>
 </div>

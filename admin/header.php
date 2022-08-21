@@ -3,12 +3,12 @@
 <div id="wrapper">
 
 <!-- Sidebar -->
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion"  id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
             
-        <img src="images/logo.png" alt="Vitrine Logo">
+        <img src="images/logo.png" alt="Vitrine Logo" style="width: 100%">
 
     </a>
 
@@ -32,6 +32,43 @@
             aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-plus"></i>
             <span>Cadastros</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="cadastros/categorias"><i class="fas fa-tags"></i> Categorias</a>
+                <a class="collapse-item" href="cadastros/produtos"><i class="fas fa-gift"></i> Produtos</a>
+                <a class="collapse-item" href="cadastros/tipos"><i class="fas fa-user-friends"></i> Tipo de Usuários</a>
+                <a class="collapse-item" href="cadastros/usuarios"><i class="fas fa-user-plus"></i> Usuários</a>
+            </div>
+        </div>
+    </li>
+
+
+    <hr class="sidebar-divider">
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTree"
+            aria-expanded="true" aria-controls="collapseTree">
+            <i class="fas fa-fw fa-plus"></i>
+            <span>Reservas e Empréstimos</span>
+        </a>
+        <div id="collapseTree" class="collapse" aria-labelledby="headingTree" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="cadastros/categorias"><i class="fas fa-tags"></i> Categorias</a>
+                <a class="collapse-item" href="cadastros/produtos"><i class="fas fa-gift"></i> Produtos</a>
+                <a class="collapse-item" href="cadastros/tipos"><i class="fas fa-user-friends"></i> Tipo de Usuários</a>
+                <a class="collapse-item" href="cadastros/usuarios"><i class="fas fa-user-plus"></i> Usuários</a>
+            </div>
+        </div>
+    </li>
+
+    <hr class="sidebar-divider">
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-plus"></i>
+            <span>Inventário de Itens</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
