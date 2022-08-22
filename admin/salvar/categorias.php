@@ -3,20 +3,20 @@
     
     if($_POST){
         $id = trim($_POST["id"] ?? NULL);
-        $nome = trim($_POST["nome"] ?? NUll);
+        $descricao = trim($_POST["descricao"] ?? NUll);
         
         //verificar se o nome não esta em branco.
-        if(empty($nome)){
+        if(empty($descricao)){
             mensagemErro("Preencha o nome da categoria corretamente.");
         }
 
         //verificar se a categoria não esta cadastrada
         $sql = "select id from categoria 
-            where nome = :nome and id <> :id 
+            where descricao = :descricao and id <> :id 
             limit 1";
 
         $consulta = $pdo->prepare($sql);
-        $consulta->bindParam(":nome", $nome);
+        $consulta->bindParam(":descricao", $descricao);
         $consulta->bindParam(":id", $id);
         $consulta->execute();
 
@@ -30,13 +30,13 @@
 
         //Verificar se ira inserir ou se ira atualizar
         if(empty($id)){
-            $sql = "insert into categoria(nome) values (:nome)";
+            $sql = "insert into categoria(descricao) values (:descricao)";
             $consulta = $pdo->prepare($sql);
-            $consulta->bindParam(":nome", $nome);
+            $consulta->bindParam(":descricao", $descricao);
         }else{
-            $sql = "update categoria set nome = :nome where id = :id limit 1";
+            $sql = "update categoria set descricao = :descricao where id = :id limit 1";
             $consulta = $pdo->prepare($sql);
-            $consulta->bindParam(":nome",$nome);
+            $consulta->bindParam(":descricao",$descricao);
             $consulta->bindParam(":id",$id);
         }
 

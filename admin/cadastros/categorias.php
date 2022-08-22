@@ -1,9 +1,12 @@
 <?php 
     //se n existir variavel page
     if(!isset($page)) exit;
-    $nome = NULL;
+    foreach($_POST as $key => $value){
+        $$key = trim ($value ?? NULL);
+    }
+    
     if(!empty($id)){
-        $sql = "select * from categoria where id = :id limit 1";
+        $sql = "select id, descricao from categoria where id = :id limit 1";
         $consulta = $pdo->prepare($sql);
         $consulta->bindParam(":id",$id);
         $consulta->execute();
@@ -11,7 +14,7 @@
         $dados = $consulta->fetch(PDO::FETCH_OBJ);
 
         $id = $dados->id ?? NULL;
-        $nome = $dados->nome ?? NULL;
+        $descricao = $dados->descricao ?? NULL;
     }
 ?>
 
@@ -29,11 +32,11 @@
             <label for="id">Id da Categoria:</label>
             <input type="text" readonly name="id" id="id"
             class="form-control" value="<?=$id?>">
-            <label for="nome">Nome da Categoria:</label>
-            <input type="text" name="nome" id="nome"
+            <label for="descricao">Nome da Categoria:</label>
+            <input type="text" name="descricao" id="descricao"
             class="form-control"  required 
             data-parsley-required-message="Por favor, preencha este campo"
-            value="<?=@$nome?>">
+            value="<?=@$descricao?>">
             <br>
             <button type="submit" class="btn btn-success">
                 <i class="fas fa-check"></i> Cadastrar

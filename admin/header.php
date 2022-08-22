@@ -3,10 +3,10 @@
 <div id="wrapper">
 
 <!-- Sidebar -->
-<ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion"  id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion"  id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
             
         <img src="images/logo.png" alt="Vitrine Logo" style="width: 100%">
 
@@ -26,33 +26,13 @@
     <hr class="sidebar-divider">
 
 
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-            aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-plus"></i>
-            <span>Cadastros</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="cadastros/categorias"><i class="fas fa-tags"></i> Categorias</a>
-                <a class="collapse-item" href="cadastros/produtos"><i class="fas fa-gift"></i> Produtos</a>
-                <a class="collapse-item" href="cadastros/tipos"><i class="fas fa-user-friends"></i> Tipo de Usuários</a>
-                <a class="collapse-item" href="cadastros/usuarios"><i class="fas fa-user-plus"></i> Usuários</a>
-            </div>
-        </div>
-    </li>
-
-
-    <hr class="sidebar-divider">
-
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTree"
-            aria-expanded="true" aria-controls="collapseTree">
-            <i class="fas fa-fw fa-plus"></i>
-            <span>Reservas e Empréstimos</span>
-        </a>
-        <div id="collapseTree" class="collapse" aria-labelledby="headingTree" data-parent="#accordionSidebar">
+        aria-expanded="true" aria-controls="collapseTree">
+        <i class="fas fa-ticket-alt"></i>
+        <span>Reservas e Empréstimos</span>
+    </a>
+    <div id="collapseTree" class="collapse" aria-labelledby="headingTree" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="cadastros/categorias"><i class="fas fa-tags"></i> Categorias</a>
                 <a class="collapse-item" href="cadastros/produtos"><i class="fas fa-gift"></i> Produtos</a>
@@ -64,18 +44,33 @@
 
     <hr class="sidebar-divider">
 
+   
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-            aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-plus"></i>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGestao"
+        aria-expanded="true" aria-controls="collapseGestao">
+        <i class="fas fa-globe"></i>
+        <span>Gestão</span>
+    </a>
+    <div id="collapseGestao" class="collapse" aria-labelledby="headingGestao" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="cadastros/categorias"><i class="fas fa-users"></i> Pessoas</a>
+                <a class="collapse-item" href="cadastros/produtos"><i class="fas fa-building"></i> Edificio</a>
+            </div>
+        </div>
+    </li>
+
+    <hr class="sidebar-divider">
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseItens"
+            aria-expanded="true" aria-controls="collapseItens">
+            <i class="fas fa-tools"></i>
             <span>Inventário de Itens</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapseItens" class="collapse" aria-labelledby="headingItens" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="cadastros/categorias"><i class="fas fa-tags"></i> Categorias</a>
-                <a class="collapse-item" href="cadastros/produtos"><i class="fas fa-gift"></i> Produtos</a>
-                <a class="collapse-item" href="cadastros/tipos"><i class="fas fa-user-friends"></i> Tipo de Usuários</a>
-                <a class="collapse-item" href="cadastros/usuarios"><i class="fas fa-user-plus"></i> Usuários</a>
+                <a class="collapse-item" href="#"><i class="fas fa-dolly"></i> Gerenciar Itens</a>
+                <a class="collapse-item" href="cadastros/categorias"><i class="fas fa-tags"></i> Gerenciar Categorias</a>
             </div>
         </div>
     </li>
@@ -89,8 +84,8 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
             aria-expanded="true" aria-controls="collapsePages">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Relatórios</span>
+            <i class="fas fa-hand-holding-usd"></i>
+            <span>Financeiro</span>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
@@ -100,13 +95,32 @@
             </div>
         </div>
     </li>
+    
+    <hr class="sidebar-divider">
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-cogs"></i>
+            <span>Opções</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="cadastros/usuarios"><i class="fas fa-user-plus"></i> Usuários</a>
+            </div>
+        </div>
+    </li>
+    <hr class="sidebar-divider">
+
+
 
     <!-- Nav Item - Charts -->
-    <li class="nav-item">
+   <!--  <li class="nav-item">
         <a class="nav-link" href="sair.php">
             <i class="fas fa-fw fa-power-off"></i>
             <span>Sair</span></a>
-    </li>
+    </li> -->
 
 
 

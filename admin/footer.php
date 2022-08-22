@@ -6,10 +6,10 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
+            <footer class="sticky-footer bg-white shadow">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; <?=date("Y")?></span>
+                        <span>Copyright REPREST-TCC &copy; <?=date("Y")?></span>
                     </div>
                 </div>
             </footer>
