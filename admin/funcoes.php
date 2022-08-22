@@ -14,3 +14,7 @@
         <?php
             exit;
     }//Fim da funcao
+?>
+
+
+

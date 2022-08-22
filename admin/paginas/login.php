@@ -31,15 +31,14 @@
 
         //Verificar se trouxe resultado
 
-        /*if(!isset($dados->id)){
+        if(!isset($dados->id)){
           mensagemErro("Usuario nao encontrado ou desativado.");
         }else if(!password_verify($senha,$dados->senha)){
           mensagemErro("Senha incorreta.");
-        };*/
+        };
         
         //dados sessao
         $_SESSION["usuario"] = array("id=>$dados->id",
-          "nome"=>$dados->nome,
           "login"=>$dados->login);
 
         //pagina home direcionamento
