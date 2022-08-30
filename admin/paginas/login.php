@@ -56,5 +56,5 @@
         <input type="password" name="senha" id="senha"
         class="form-control" required data-parsley-required-message="Por favor preencha este campo">
         <br>
-        <button type="submit" class="btn btn-success w-100 rounded-pill">Efetuar Login</button>
+        <div class="text-center"><button type="submit" class="btn btn-primary  w-50 rounded-pill">Efetuar Login</button></div>
 </div>
