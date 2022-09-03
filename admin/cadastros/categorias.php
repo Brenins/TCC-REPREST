@@ -29,8 +29,7 @@
     </div>
     <div class="card-body">
         <form name="formCadastro" method="post" action="salvar/categorias" data-parsley-validate="">
-            <label for="id">Id da Categoria:</label>
-            <input type="text" readonly name="id" id="id"
+            <input type="hidden" readonly name="id" id="id"
             class="form-control" value="<?=$id?>">
             <label for="descricao">Nome da Categoria:</label>
             <input type="text" name="descricao" id="descricao"
