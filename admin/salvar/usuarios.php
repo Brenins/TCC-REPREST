@@ -8,10 +8,9 @@
         foreach($_POST as $key => $value){
             $$key = trim ($value ?? NULL);
         }
-
-        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-            mensagemErro("Digite um e-mail valido");
-        }else if($senha != $senha2){
+        $senha = $senha2 = NULL;
+        
+        if($senha != $senha2){
             mensagemErro("As senhas nao conferem.");
         }
 
@@ -37,25 +36,23 @@
 
             $senha = password_hash($senha, PASSWORD_DEFAULT);
 
-            $sql = "insert into usuario (nome, login, email, senha, ativo) values (:nome, :login, :email, :senha, :ativo)";
+            $sql = "insert into usuario (login, senha, ativo, criado) values (:login, :senha, :ativo, :criado)";
             $consulta = $pdo->prepare($sql);
-            $consulta->bindParam(":nome", $nome);
             $consulta->bindParam(":login", $login);
-            $consulta->bindParam(":email", $email);
             $consulta->bindParam(":senha", $senha);
             $consulta->bindParam(":ativo", $ativo);
+            $consulta->bindParam(":criado",$_SESSION['usuario']['login']);
 
         } else if ( empty ($senha ) ) {
 
             //fazer o update, mas sem a senha
 
-            $sql = "update usuario set nome = :nome, email = :email, login = :login, ativo = :ativo where id = :id limit 1";
+            $sql = "update usuario set  login = :login, ativo = :ativo, modificado = :modificado  where id = :id limit 1";
             $consulta = $pdo->prepare($sql);
-            $consulta->bindParam(":nome", $nome);
             $consulta->bindParam(":login", $login);
-            $consulta->bindParam(":email", $email);
             $consulta->bindParam(":ativo", $ativo);
             $consulta->bindParam(":id", $id);
+            $consulta->bindParam(":modificado",$_SESSION['usuario']['login']);
 
         } else {
 
@@ -63,14 +60,13 @@
 
             $senha = password_hash($senha, PASSWORD_DEFAULT);
 
-            $sql = "update usuario set nome = :nome, email = :email, login = :login, ativo = :ativo, senha =:senha where id = :id limit 1";
+            $sql = "update usuario set login = :login, ativo = :ativo, senha = :senha, modificado = :modificado where id = :id limit 1";
             $consulta = $pdo->prepare($sql);
-            $consulta->bindParam(":nome", $nome);
             $consulta->bindParam(":login", $login);
-            $consulta->bindParam(":email", $email);
             $consulta->bindParam(":ativo", $ativo);
             $consulta->bindParam(":senha", $senha);
             $consulta->bindParam(":id", $id);
+            $consulta->bindParam(":modificado",$_SESSION['usuario']['login']);
 
         }
 

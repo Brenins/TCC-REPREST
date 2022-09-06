@@ -3,19 +3,19 @@
 
     //verificar se existe um produto cadastrado
 
-    $sql = "select id from produto where categoria_id = :id limit 1";
+    $sql = "select id from item where idcategoria = :id limit 1";
 
     //preparar o sql para execucao com o banco
-    $consultaProduto = $pdo->prepare($sql);
+    $consultaItem = $pdo->prepare($sql);
 
-    $consultaProduto->bindParam(":id", $id);
+    $consultaItem->bindParam(":id", $id);
 
-    $consultaProduto->execute();
+    $consultaItem->execute();
 
-    $produto = $consultaProduto->fetch(PDO::FETCH_OBJ);
+    $item = $consultaItem->fetch(PDO::FETCH_OBJ);
     
     //verificar se existe um produto.
-    if(!empty($produto->id)){
+    if(!empty($item->id)){
         mensagemErro('Impossivel exlcluir a categoria selecionada, pois existem produtos relacionados a mesma.');
     }
 

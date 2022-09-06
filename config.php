@@ -2,7 +2,7 @@
     $servidor ="localhost";
     $usuario = "root";
     $senha = "";
-    $banco = "vitrine";
+    $banco = "tcc";
 
     try{
         $pdo = new pdo("mysql:host={$servidor};

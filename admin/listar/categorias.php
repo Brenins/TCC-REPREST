@@ -27,7 +27,7 @@
                 <?php
                     //Selecionar todas as categorias
                     
-                    $consulta = $pdo->prepare("select * from categoria order by id");
+                    $consulta = $pdo->prepare("select id, descricao from categoria order by id");
 
                     $consulta->execute();
 
@@ -36,7 +36,7 @@
                         ?>
                             <tr>
                                 <td width="70px"><?=$dados->id?></td>
-                                <td><?=$dados->nome?></td>
+                                <td><?=$dados->descricao?></td>
                                 <td width="100px">
                                     <a href="cadastros/categorias/<?=$dados->id?>" 
                                     title="Editar" class="btn btn-warning"><i class="fas fa-edit"></i>

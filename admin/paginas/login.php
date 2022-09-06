@@ -21,7 +21,7 @@
         }
         // Selecionar os dados do banco
 
-        $sql = "select id, nome, login,senha from usuario where login = :login and ativo ='S' limit 1";
+        $sql = "select id, login,senha from usuario where login = :login and ativo ='S' limit 1";
 
         $consulta = $pdo->prepare($sql);
         $consulta->bindParam(":login", $login);
@@ -39,7 +39,6 @@
         
         //dados sessao
         $_SESSION["usuario"] = array("id=>$dados->id",
-          "nome"=>$dados->nome,
           "login"=>$dados->login);
 
         //pagina home direcionamento
@@ -48,8 +47,8 @@
     } //Fim do POST
 ?>
 
-<div class="login">
-    <h1 class="text-center">Vitrine Admin</h1>
+<div class="login" style="border-radius: 24px">
+    <h1 class="text-center"><img src="images/logo2.png" alt="Vitrine Logo"></h1>
     <form name="formLogin" method="post">
         <label for="Login">Login:</label>
         <input type="text" name="login" id="login" class="form-control" required>
@@ -57,5 +56,5 @@
         <input type="password" name="senha" id="senha"
         class="form-control" required data-parsley-required-message="Por favor preencha este campo">
         <br>
-        <button type="submit" class="btn btn-success w-100">Efetuar Login</button>
+        <div class="text-center"><button type="submit" class="btn btn-primary  w-50 rounded-pill">Efetuar Login</button></div>
 </div>

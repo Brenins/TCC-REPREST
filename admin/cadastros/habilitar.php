@@ -19,7 +19,7 @@
 
 <div class="card shadow-lg">
     <div class="card-header">
-        <h2 class="float-left">Cadastro de Usuarios</h2>
+        <h2 class="float-left">Habilitação de Usuarios</h2>
         <div class="float-right">
             <a href="listar/usuarios" 
             title="Listar Usuarios" 
@@ -31,21 +31,10 @@
             
 
             <input type="hidden" readonly name="id" id="id" class="form-control" value="<?=$id?>">
-            
-
 
             <label for="login">Login do Usuario:</label>
-            <input type="text" name="login" id="login" class="form-control" required 
+            <input type="text" readonly name="login" id="login" class="form-control" required 
             data-parsley-required-message="Preencha Este Campo" value="<?=$login?>" autocomplete="nope">
-            
-
-            <label for="senha">Digite sua senha:</label>
-            <input type="password" name="senha" id="senha" class="form-control" required 
-            data-parsley-required-message="Digite a sua senha" autocomplete="off">
-            
-            <label for="senha2">Confirme sua senha:</label>
-            <input type="password" name="senha2" id="senha2" class="form-control" required 
-            data-parsley-required-message="Digite a sua senha" autocomplete="off">
 
             <label for="ativo">Ativo:</label>
             <select name="ativo" id="ativo" class="form-control" 
@@ -56,7 +45,7 @@
             </select>
             <br>
             <button type="submit" class="btn btn-success rounded-pill">
-                <i class="fas fa-check"></i> Salvar
+                <i class="fas fa-check "></i> Salvar
             </button>
         </form>
     </div>
