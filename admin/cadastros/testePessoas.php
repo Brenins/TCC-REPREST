@@ -28,7 +28,7 @@
         <div class="float-left">
             <ul class="nav nav-pills mr-2">
                 <li class="nav-item mr-2">
-                    <a class="nav-link active rounded-pill" href="#"><i class="bi bi-person-plus-fill"></i> Cadastrar Pessoa</a>
+                    <a class="nav-link active rounded-pill" href="cadastros/pessoas"><i class="bi bi-person-plus-fill"></i> Cadastrar Pessoa</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link active dropdown-toggle rounded-pill" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="bi bi-building"></i> Moradores</a>
