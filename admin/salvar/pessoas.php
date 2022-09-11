@@ -26,16 +26,9 @@
             
         }
 
-        echo $today = date("d.m.Y");
-
         if ( empty ( $id ) ) {
-            if($today = date("d.m.Y") < $dataNascimento){
-                echo "<script>href='www.google.com.br';</script>";
-                
-            }
             
             //inserir no banco
-
             $sql = "insert into  pessoa (nome,cpf,rg,dtnascimento,criado) values (:nome,:cpf,:rg,:dtnascimento,:criado)";
             $consulta = $pdo->prepare($sql);
             $consulta->bindParam(":nome", $nome);
@@ -44,37 +37,22 @@
             $consulta->bindParam(":dtnascimento", $dataNascimento);
             $consulta->bindParam(":criado",$_SESSION['usuario']['login']);
 
-        }/* else if ( empty ($senha ) ) {
-
-            //fazer o update, mas sem a senha
-
-            $sql = "update usuario set  login = :login, ativo = :ativo, modificado = :modificado  where id = :id limit 1";
-            $consulta = $pdo->prepare($sql);
-            $consulta->bindParam(":login", $login);
-            $consulta->bindParam(":ativo", $ativo);
-            $consulta->bindParam(":id", $id);
-            $consulta->bindParam(":modificado",$_SESSION['usuario']['login']);
-
-        } else {
-
-            //fazer update com a senha
-
-            $senha = password_hash($senha, PASSWORD_DEFAULT);
-
-            $sql = "update usuario set login = :login, ativo = :ativo, senha = :senha, modificado = :modificado where id = :id limit 1";
-            $consulta = $pdo->prepare($sql);
-            $consulta->bindParam(":login", $login);
-            $consulta->bindParam(":ativo", $ativo);
-            $consulta->bindParam(":senha", $senha);
-            $consulta->bindParam(":id", $id);
-            $consulta->bindParam(":modificado",$_SESSION['usuario']['login']);
-
-        }*/
-
-        if($consulta->execute()){
-            echo "<script>location.href='listar/pessoas';</script>";
         }else{
+            //fazer o update, mas sem a senha
+            $sql = "update pessoa set  nome = :nome, cpf = :cpf, rg = :rg, dtnascimento = :dtnascimento, modificado = :modificado  where id = :id limit 1";
+            $consulta = $pdo->prepare($sql);
+            $consulta->bindParam(":nome", $nome);
+            $consulta->bindParam(":cpf", $cpf);
+            $consulta->bindParam(":rg", $rg);
+            $consulta->bindParam(":dtnascimento", $dataNascimento);
+            $consulta->bindParam(":modificado",$_SESSION['usuario']['login']);
+            $consulta->bindParam(":id", $id);
+        }
+
+        if(!$consulta->execute()){
             mensagemErro("Nao foi possivel salvar o registro.");
+        }else{
+            echo "<script>location.href='listar/pessoas';</script>";
         }
     }
 ?>

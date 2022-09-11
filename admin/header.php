@@ -69,7 +69,7 @@
         </a>
         <div id="collapseItens" class="collapse" aria-labelledby="headingItens" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="#"><i class="fas fa-dolly"></i> Gerenciar Itens</a>
+                <a class="collapse-item" href="cadastros/itens"><i class="fas fa-dolly"></i> Gerenciar Itens</a>
                 <a class="collapse-item" href="cadastros/categorias"><i class="fas fa-tags"></i> Gerenciar Categorias</a>
             </div>
         </div>

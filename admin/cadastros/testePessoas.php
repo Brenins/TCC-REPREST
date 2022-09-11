@@ -33,7 +33,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link active dropdown-toggle rounded-pill" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="bi bi-building"></i> Moradores</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Cadastrar Morador</a>
+                        <a class="dropdown-item" href="cadastros/morador">Cadastrar Morador</a>
                         <a class="dropdown-item" href="#">Lista de Moradores</a>
                     </div>
                 </li>

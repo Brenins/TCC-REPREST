@@ -21,7 +21,7 @@
 
 <div class="card">
     <div class="card-header">
-        <h2 class="float-left">Cadastro de Pessoa</h2>
+        <h2 class="float-left">Cadastro de Pessoas</h2>
         <div class="float-right">
             <a href="listar/pessoas" 
             title="Listar Pessoas" 
@@ -37,11 +37,11 @@
             data-parsley-required-message="Preencha o nome completo" value="<?=$nome?>" autocomplete="nope">
             
             <label for="cpf">CPF:</label>
-            <input type="text" name="cpf" id="cpf" class="form-control" required 
+            <input type="text" name="cpf" id="cpf" class="form-control" data-inputmask="'mask': '999.999.999-99'" required 
             data-parsley-required-message="Preencha o cpf" value="<?=$cpf?>" autocomplete="nope">
             
             <label for="rg">RG:</label>
-            <input type="text" name="rg" id="rg" class="form-control" required 
+            <input type="text" name="rg" id="rg" class="form-control" data-inputmask="'mask': '99.999.999-9'" required 
             data-parsley-required-message="Preencha o RG" value="<?=$rg?>" autocomplete="nope">
 
             <label for="dataNascimento">Data de Nascimento:</label>
