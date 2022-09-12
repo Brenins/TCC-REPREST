@@ -34,10 +34,7 @@
     </a>
     <div id="collapseTree" class="collapse" aria-labelledby="headingTree" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="cadastros/categorias"><i class="fas fa-tags"></i> Categorias</a>
-                <a class="collapse-item" href="cadastros/produtos"><i class="fas fa-gift"></i> Produtos</a>
-                <a class="collapse-item" href="cadastros/tipos"><i class="fas fa-user-friends"></i> Tipo de Usuários</a>
-                <a class="collapse-item" href="cadastros/usuarios"><i class="fas fa-user-plus"></i> Usuários</a>
+                <a class="collapse-item" href="cadastros/categorias"><i class="fas fa-tags"></i> Não Desenvolvido</a>
             </div>
         </div>
     </li>
@@ -89,9 +86,7 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="relatorios/produtos"><i class="fas fa-shopping-cart"></i> Produtos</a>
-                <a class="collapse-item" href="relatorios/usuarios"><i class="fas fa-users"></i> Usuários</a>
-                <a class="collapse-item" href="relatorios/log"><i class="fas fa-file"></i> Log</a>
+                <a class="collapse-item" href="relatorios/produtos"><i class="fas fa-shopping-cart"></i> Não Desenvolvido</a>
             </div>
         </div>
     </li>

@@ -43,8 +43,8 @@
                     <a class="nav-link active dropdown-toggle rounded-pill" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="bi bi-file-person"></i> Funcionários</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">Cadastrar Funcionário</a>
-                        <a class="dropdown-item" href="#">Lista de Funcionários</a>
-                        <a class="dropdown-item" href="#">Cadastro de Função</a>
+                        <a class="dropdown-item" href="listar/funcionarios">Lista de Funcionários</a>
+                        <a class="dropdown-item" href="cadastros/funcao">Cadastro de Função</a>
                     </div>
                 </li>
             </div>
