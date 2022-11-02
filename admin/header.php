@@ -6,7 +6,7 @@
 <ul class="navbar-nav sidebar sidebar-dark accordion" style="background-color: #256D85" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="./paginas/home">
             
         <img src="images/logo.png" alt="Vitrine Logo" style="width: 100%">
 
@@ -17,7 +17,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="index.php">
+        <a class="nav-link" href="./paginas/home">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>

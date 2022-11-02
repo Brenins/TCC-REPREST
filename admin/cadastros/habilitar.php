@@ -4,7 +4,7 @@
     $login = $senha = $ativo = NULL;
 
     if(!empty($id)){
-        $sql = "select id, login, ativo, criado from usuario where id = :id limit 1";
+        $sql = "select id, login, ativo, criado from funcionario where id = :id limit 1";
         $consulta = $pdo->prepare($sql);
         $consulta->bindParam(":id",$id);
         $consulta->execute();
