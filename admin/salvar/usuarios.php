@@ -16,7 +16,7 @@
 
         //se ja existe um usuario cadastrado com este login
 
-        $sql ="select id from usuario where login = :login AND id <> :id limit 1";
+        $sql ="select id from funcionario where login = :login AND id <> :id limit 1";
 
         $consulta = $pdo->prepare($sql);
         $consulta->bindParam(":login", $login);
@@ -36,7 +36,7 @@
 
             $senha = password_hash($senha, PASSWORD_DEFAULT);
 
-            $sql = "insert into usuario (login, senha, ativo, criado) values (:login, :senha, :ativo, :criado)";
+            $sql = "insert into funcionario (login, senha, ativo, criado) values (:login, :senha, :ativo, :criado)";
             $consulta = $pdo->prepare($sql);
             $consulta->bindParam(":login", $login);
             $consulta->bindParam(":senha", $senha);
@@ -47,7 +47,7 @@
 
             //fazer o update, mas sem a senha
 
-            $sql = "update usuario set  login = :login, ativo = :ativo, modificado = :modificado  where id = :id limit 1";
+            $sql = "update funcionario set  login = :login, ativo = :ativo, modificado = :modificado  where id = :id limit 1";
             $consulta = $pdo->prepare($sql);
             $consulta->bindParam(":login", $login);
             $consulta->bindParam(":ativo", $ativo);
@@ -60,7 +60,7 @@
 
             $senha = password_hash($senha, PASSWORD_DEFAULT);
 
-            $sql = "update usuario set login = :login, ativo = :ativo, senha = :senha, modificado = :modificado where id = :id limit 1";
+            $sql = "update funcionario set login = :login, ativo = :ativo, senha = :senha, modificado = :modificado where id = :id limit 1";
             $consulta = $pdo->prepare($sql);
             $consulta->bindParam(":login", $login);
             $consulta->bindParam(":ativo", $ativo);
