@@ -5,7 +5,7 @@
         <script>
             Swal.fire({
                 icon: 'error',
-                title: 'Pera la amigao...',
+                title: 'Um erro foi encontrado!',
                 text: '<?=$msg?>',
             }).then((result) => {
                 history.back(); 

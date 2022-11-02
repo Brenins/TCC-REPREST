@@ -1,4 +1,21 @@
 <?php
+    if(!isset($page)) exit;
+    foreach($_POST as $key => $value){
+        $$key = trim ($value ?? NULL);
+    }
+
+
+    if(!empty($id)){
+        $sql = "select id, nome from funcao where id = :id limit 1";
+        $consulta = $pdo->prepare($sql);
+        $consulta->bindParam(":id",$id);
+        $consulta->bindParam(":nome",$nome);
+        $consulta->execute();
+
+        $dados = $consulta->fetch(PDO::FETCH_OBJ);
+        $id = $dados->id ?? NULL;
+        $nome = $dados->nome ?? NULL;
+    }
 
 ?>
 
@@ -6,7 +23,7 @@
     <div class="card-header">
         <h2 class="float-left">Cadastro de Funções</h2>
         <div class="float-right">
-            <a href="listar/funcao" 
+            <a href="listar/funcoes" 
             title="Listar Funcao" 
             class="btn btn-primary rounded-pill">Listar Funções</a>
         </div>
@@ -14,10 +31,9 @@
     <div class="card-body">
         <form name="formCadastro" method="post" action="salvar/funcao" data-parsley-valdiate="">
             <input type="hidden" readonly name="id" id="id" class="form-control" value="<?=$id?>">
-            
             <label for="nome">Nome da Funcao:</label>
             <input type="text" name="nome" id="nome" class="form-control" required 
-            data-parsley-required-message="Preencha o nome completo" value="<?=$nome?>" autocomplete="nope">
+            data-parsley-required-message="Preencha o nome completo da função" value="<?=@$nome?>" autocomplete="nope">
             <br>
             <button type="submit" class="btn btn-success rounded-pill">
                 <i class="fas fa-check"></i> Salvar
