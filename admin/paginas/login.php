@@ -21,7 +21,7 @@
         }
         // Selecionar os dados do banco
 
-        $sql = "select id, login,senha from usuario where login = :login and ativo ='S' limit 1";
+        $sql = "select id, login,senha from funcionario where login = :login and ativo ='S' limit 1";
 
         $consulta = $pdo->prepare($sql);
         $consulta->bindParam(":login", $login);
