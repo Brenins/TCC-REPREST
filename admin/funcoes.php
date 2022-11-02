@@ -14,6 +14,23 @@
         <?php
             exit;
     }//Fim da funcao
+
+
+    function mensagemErro2($msg){
+        ?>
+        <script>
+            Swal.fire({
+                imageUrl: 'images/computer.png',
+                title: 'Um erro foi encontrado!',
+                text: '<?=$msg?>',
+                confirmButtonText: 'Voltar para Dashboard',
+            }).then((result) => {
+                window.location.href = './paginas/home';
+            })
+        </script>
+        <?php
+            exit;
+    }//Fim da funcao
 ?>
 
 
