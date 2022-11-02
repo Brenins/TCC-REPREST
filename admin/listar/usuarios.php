@@ -24,7 +24,7 @@
             </thead>
             <tbody>
                 <?php
-                    $consulta = $pdo->prepare("select id, login, ativo, criado, modificado from usuario order by id");
+                    $consulta = $pdo->prepare("select id, login, ativo, criado, modificado from funcionario order by id");
                     $consulta->execute();
                     while($dados = $consulta->fetch(PDO::FETCH_OBJ)){
                         ?>
