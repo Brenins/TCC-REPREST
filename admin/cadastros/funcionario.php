@@ -38,23 +38,44 @@
 
             <label for="idpessoa">Selecione uma pessoa para cadastrar como Funcionário:</label>
             <select name="idpessoa" id="idpessoa" required data-parsley-required-message="Selecione uma pessoa." 
-            
-            class="form-control">
-                <option value=""></option>
-                <?php
-                    $sql= "select id, nome from pessoa order by nome";
-                    $consultaPessoa = $pdo->prepare($sql);
-                    $consultaPessoa->execute();
+                class="form-control">
+                    <option value=""></option>
+                    <?php
+                        $sql= "select id, nome from pessoa order by nome";
+                        $consultaPessoa = $pdo->prepare($sql);
+                        $consultaPessoa->execute();
 
-                    while ($dadosPessoa = $consultaPessoa->fetch(PDO::FETCH_OBJ)){
-                        //Separar dados
-                        $id = $dadosPessoa->id;
-                        $nome = $dadosPessoa->nome;
+                        while ($dadosPessoa = $consultaPessoa->fetch(PDO::FETCH_OBJ)){
+                            //Separar dados
+                            $id = $dadosPessoa->id;
+                            $nome = $dadosPessoa->nome;
 
-                        echo "<option value='{$id}'>{$nome}</option>";
-                    }
-                ?>
+                            echo "<option value='{$id}'>{$nome}</option>";
+                        }
+                    ?>
+                >
             </select>
+
+            <label for="idfuncao">Selecione a função do funcionário:</label>
+            <select name="idfuncao" id="idfuncao" required data-parsley-required-message="Selecione uma função/cargo"
+
+                class="form-control">
+                    <option value=""></option>
+                    <?php
+                        $sql= "select id, nome from funcao order by nome";
+                        $consultaFuncao = $pdo->prepare($sql);
+                        $consultaFuncao->execute();
+
+                        while ($dadosFuncao = $consultaFuncao->fetch(PDO::FETCH_OBJ)){
+                            //Separar dados
+                            $id = $dadosFuncao->id;
+                            $nome = $dadosFuncao->nome;
+                            echo "<option value='{$id}'>{$nome}</option>";
+                        }
+                    ?>
+                >
+            </select>
+
 
             <label for="ativo">Ativo:</label>
             <select name="ativo" id="ativo" class="form-control" 
