@@ -33,7 +33,7 @@
         </div>
     </div>
     <div class="card-body">
-        <form name="formCadastro" method="post" action="salvar/usuarios" data-parsley-valdiate="">
+        <form name="formCadastro" method="post" action="salvar/funcionario" data-parsley-valdiate="">
             <input type="hidden" readonly name="id" id="id" class="form-control" value="<?=$id?>">
 
             <label for="idpessoa">Selecione uma pessoa para cadastrar como Funcionário:</label>
