@@ -18,10 +18,26 @@
                     <td>ID</td>
                     <td>Nome do Funcionário</td>
                     <td>Funcao</td>
-                    <td>Opções</td>
                 </tr>
             </thead>
             <tbody>
+                <?php
+                    $consulta = $pdo->prepare("select f.id as id, p.nome as nome, fc.nome as funcao from pessoa p join funcionario f on p.id = f.idpessoa join funcao fc on f.idfuncao = fc.id");
+                    
+                    $consulta->execute();
+
+                    while($dados = $consulta->fetch(PDO::FETCH_OBJ)
+                    ){
+                        ?>
+                        <tr>
+                            <td><?=$dados->id?></td>
+                            <td><?=$dados->nome?></td>
+                            <td><?=$dados->funcao?></td>
+                        </tr>
+                        <?php
+                    }
+
+                ?>
             </tbody>
         </table>
     </div>

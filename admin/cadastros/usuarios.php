@@ -23,22 +23,17 @@
         <div class="float-right">
             <a href="listar/usuarios" 
             title="Listar Usuarios" 
-            class="btn btn-primary rounded-pill">Listar Usuarios</a>
+            class="btn btn-primary">Lista de Usuarios</a>
         </div>
     </div>
     <div class="card-body">
-        <form name="formCadastro" method="post" action="salvar/usuarios" data-parsley-valdiate="">
-            
-
+        <form name="formCadastro" method="post" action="salvar/usuarios" data-parsley-valdiate="">            
             <input type="hidden" readonly name="id" id="id" class="form-control" value="<?=$id?>">
-            
-
-
+    
             <label for="login">Login do Usuario:</label>
             <input type="text" name="login" id="login" class="form-control" required 
             data-parsley-required-message="Preencha Este Campo" value="<?=$login?>" autocomplete="nope">
             
-
             <label for="senha">Digite sua senha:</label>
             <input type="password" name="senha" id="senha" class="form-control" required 
             data-parsley-required-message="Digite a sua senha" autocomplete="off">
@@ -49,13 +44,13 @@
 
             <label for="ativo">Ativo:</label>
             <select name="ativo" id="ativo" class="form-control" 
-            required data-parsley-required-message="Selecione uma Opcao">
-                <option value=""></option>
-                <option value="S">Sim</option>
-                <option value="N">Nao</option>
+                required data-parsley-required-message="Selecione uma Opcao">
+                    <option value=""></option>
+                    <option value="S">Sim</option>
+                    <option value="N">Nao</option>
             </select>
             <br>
-            <button type="submit" class="btn btn-success rounded-pill">
+            <button type="submit" class="btn btn-success">
                 <i class="fas fa-check"></i> Salvar
             </button>
         </form>

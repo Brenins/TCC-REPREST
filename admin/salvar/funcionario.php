@@ -39,7 +39,7 @@
             
             //inserir no banco
 
-            $sql = "insert into funcionario (ativo, idpessoa,idfuncao, criado) values (:ativo,:idpessoa,:idfuncao, :criado)";
+            $sql = "insert into funcionario (ativo, idpessoa,idfuncao, criado) values (:ativo,:idpessoa, :idfuncao, :criado)";
             $consulta = $pdo->prepare($sql);
             $consulta->bindParam(":ativo", $ativo);
             $consulta->bindParam(":idpessoa", $idpessoa);

@@ -21,17 +21,15 @@
 <div class="card shadow-lg">
     <div class="card-header">
         <h2 class="float-left">Gestão de Pessoas</h2>
-        <div class="float-right">
-        </div>
     </div>
     <div class="card-body">
         <div class="float-left">
             <ul class="nav nav-pills mr-2">
                 <li class="nav-item mr-2">
-                    <a class="nav-link active rounded-pill" href="cadastros/pessoas"><i class="bi bi-person-plus-fill"></i> Cadastrar Pessoa</a>
+                    <a class="nav-link active" href="cadastros/pessoas"><i class="bi bi-person-plus-fill"></i> Cadastrar Nova Pessoa</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link active dropdown-toggle rounded-pill" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="bi bi-building"></i> Moradores</a>
+                    <a class="nav-link active dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="bi bi-building"></i>  Gestão de  Moradores</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="cadastros/morador">Cadastrar Morador</a>
                         <a class="dropdown-item" href="listar/moradores">Lista de Moradores</a>
@@ -40,11 +38,12 @@
             </div>
             <ul class="nav nav-pills">
                 <li class="nav-item dropdown">
-                    <a class="nav-link active dropdown-toggle rounded-pill" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="bi bi-file-person"></i> Funcionários</a>
+                    <a class="nav-link active dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="bi bi-file-person"></i>  Gestão de Funcionários</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="cadastros/funcionario">Cadastrar Funcionário</a>
                         <a class="dropdown-item" href="listar/funcionarios">Lista de Funcionários</a>
                         <a class="dropdown-item" href="cadastros/funcao">Cadastro de Função</a>
+                        <a class="dropdown-item" href="cadastros/usuarios">Definir Login de Funcionário</a>
                     </div>
                 </li>
             </div>
