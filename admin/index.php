@@ -70,7 +70,7 @@
     <link rel="stylesheet" href="css/sweetalert2.min.css"></script>
 </head>
 
-<body id="page-top">
+<body id="page-top" style="background-color: #256D85 ;">
     <?php
         require "funcoes.php";
 

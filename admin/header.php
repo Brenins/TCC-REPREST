@@ -94,20 +94,8 @@
     <hr class="sidebar-divider">
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-            aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-cogs"></i>
-            <span>Opções</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="cadastros/usuarios"><i class="fas fa-user-plus"></i> Usuários</a>
-            </div>
-        </div>
-    </li>
-    <hr class="sidebar-divider">
-
+    
+    
 
 
     <!-- Nav Item - Charts -->
@@ -160,22 +148,13 @@
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                            Olá <?=$_SESSION['usuario']['login']?>
+                            Olá <?=$_SESSION['usuario']['login']?> <i class="fas fa-ellipsis-v"></i>
                         </span>
                         
                     </a>
                     <!-- Dropdown - User Information -->
                     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                         aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="#">
-                            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                            Seus Dados
-                        </a>
-                        <a class="dropdown-item" href="#">
-                            <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                            Mudar Senha
-                        </a>
-                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="sair.php">
                             <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                             Logout

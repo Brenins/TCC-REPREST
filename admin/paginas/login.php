@@ -47,12 +47,12 @@
     } //Fim do POST
 ?>
 
-<div class="login" style="border-radius: 24px">
+<div class="login" style="border-radius: 24px; background-color: white;">
     <h1 class="text-center"><img src="images/logo2.png" alt="Vitrine Logo"></h1>
     <form name="formLogin" method="post">
-        <label for="Login">Login:</label>
+        <label for="Login" style="font-weight:bold;">Login:</label>
         <input type="text" name="login" id="login" class="form-control" required>
-        <label for="Senha">Senha:</label>
+        <label for="Senha" style="font-weight:bold;">Senha:</label>
         <input type="password" name="senha" id="senha"
         class="form-control" required data-parsley-required-message="Por favor preencha este campo">
         <br>
