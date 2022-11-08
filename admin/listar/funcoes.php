@@ -4,7 +4,7 @@
 
 <div class="card shadow-lg">
     <div class="card-header">
-        <h2 class="float-left">Listar Funcoes</h2>
+        <h2 class="float-left">Lista de Funções</h2>
         <div class="float-right">
             <a href="cadastros/funcao" title="Cadastrar Nova função"
             class="btn btn-primary">

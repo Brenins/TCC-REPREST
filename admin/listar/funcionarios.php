@@ -3,11 +3,18 @@
 ?>
 <div class="card shadow-lg">
     <div class="card-header">
-        <h2 class="float-left">Listar Funcionários</h2>
+        <h2 class="float-left">Lista de Funcionários</h2>
         <div class="float-right">
-            <a href="cadastros/funcionarios" title="Cadastrar Funcionário" class="btn btn-primary">
-                Cadastrar Funcionário
-            </a>
+            <ul class="nav nav-pills">
+                <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="fas fa-bars"></i>  Menu</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="cadastros/funcionario">Cadastrar Funcionário</a>
+                        <a class="dropdown-item" href="cadastros/funcao">Cadastro de Função</a>
+                        <a class="dropdown-item" href="cadastros/usuarios">Definir Login de Funcionário</a>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="card-body">

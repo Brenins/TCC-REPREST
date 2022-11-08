@@ -6,11 +6,18 @@
 
 <div class="card shadow-lg">
     <div class="card-header">
-        <h2 class="float-left">Cadastro de Usuarios</h2>
+        <h2 class="float-left">Criação de Usuário</h2>
         <div class="float-right">
-            <a href="listar/usuarios" 
-            title="Listar Usuarios" 
-            class="btn btn-primary">Lista de Usuarios</a>
+            <ul class="nav nav-pills">
+                <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="fas fa-bars"></i>  Menu</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="cadastros/funcionario">Cadastrar Funcionário</a>
+                        <a class="dropdown-item" href="listar/funcionarios">Lista de Funcionários</a>
+                        <a class="dropdown-item" href="cadastros/funcao">Cadastro de Função</a>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="card-body">

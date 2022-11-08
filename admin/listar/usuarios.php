@@ -3,7 +3,7 @@
 ?>
 <div class="card shadow-lg">
     <div class="card-header">
-        <h2 class="float-left">Listar Usuarios</h2>
+        <h2 class="float-left">Lista de Usuários</h2>
         <div class="float-right">
             <a href="cadastros/usuarios" title="Cadastrar Novo Usuário" class="btn btn-primary">
                 Cadastrar Usuário
