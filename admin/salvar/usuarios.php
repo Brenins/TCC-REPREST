@@ -1,15 +1,14 @@
 <?php
     //Se nao existir a pagina
     if(!isset($page))exit;
+    $senha2 = NULL;
 
     if($_POST){
-
         //Recuperar os dados enviados
         foreach($_POST as $key => $value){
             $$key = trim ($value ?? NULL);
         }
-        $senha = $senha2 = NULL;
-        
+
         if($senha != $senha2){
             mensagemErro("As senhas nao conferem.");
         }
@@ -27,31 +26,16 @@
 
         if(!empty($dados->id)){
             mensagemErro("Usuario cadastrado no sistema, por favor insira outro usuario.");
-
         }
         
-        if ( empty ( $login ) ) {
-            
-            //inserir no banco
-
-            $senha = password_hash($senha, PASSWORD_DEFAULT);
-
-            $sql = "insert into funcionario (login, senha, ativo, criado) values (:login, :senha, :ativo, :criado)";
-            $consulta = $pdo->prepare($sql);
-            $consulta->bindParam(":login", $login);
-            $consulta->bindParam(":senha", $senha);
-            $consulta->bindParam(":ativo", $ativo);
-            $consulta->bindParam(":criado",$_SESSION['usuario']['login']);
-
-        }/* } else if ( empty ($senha ) ) {
+        if ( empty ($senha ) ) {
 
             //fazer o update, mas sem a senha
-
             $sql = "update funcionario set  login = :login, ativo = :ativo, modificado = :modificado  where id = :id limit 1";
             $consulta = $pdo->prepare($sql);
             $consulta->bindParam(":login", $login);
             $consulta->bindParam(":ativo", $ativo);
-            $consulta->bindParam(":id", $id);
+            $consulta->bindParam(":id", $idfuncionario);
             $consulta->bindParam(":modificado",$_SESSION['usuario']['login']);
 
         } else {
@@ -60,18 +44,17 @@
 
             $senha = password_hash($senha, PASSWORD_DEFAULT);
 
-            $sql = "update funcionario set login = :login,senha = :senha, ativo = :ativo, modificado = :modificado where id = :id limit 1";
+            $sql = "update funcionario set login = :login, senha = :senha, ativo = :ativo, modificado = :modificado where id = :id limit 1";
             $consulta = $pdo->prepare($sql);
-            $consulta->bindParam(":id", $id);
+            $consulta->bindParam(":id", $idfuncionario);
             $consulta->bindParam(":login", $login);
             $consulta->bindParam(":senha", $senha);
             $consulta->bindParam(":ativo", $ativo);
             $consulta->bindParam(":modificado",$_SESSION['usuario']['login']);
 
-        } */
-
+        }
         if($consulta->execute()){
-            echo "<script>location.href='listar/usuarios';</script>";
+            mensagemSucesso('listar/usuarios');
         }else{
 
         }

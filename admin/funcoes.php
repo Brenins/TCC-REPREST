@@ -31,6 +31,23 @@
         <?php
             exit;
     }//Fim da funcao
+
+
+
+    function mensagemSucesso($location){
+        ?>
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Salvo com Sucesso!',
+                confirmButtonText: 'Ok',
+            }).then((result) => {
+                window.location.href = '<?=$location?>';
+            })
+        </script>
+        <?php
+            exit;
+    }//Fim da funcao
 ?>
 
 
