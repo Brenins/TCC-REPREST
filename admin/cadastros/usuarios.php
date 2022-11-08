@@ -2,19 +2,6 @@
     if(!isset($page)) exit;
 
     $login = $senha = $ativo = NULL;
-
-    if(!empty($id)){
-        $sql = "select id, login, ativo, criado from funcionario where id = :id limit 1";
-        $consulta = $pdo->prepare($sql);
-        $consulta->bindParam(":id",$id);
-        $consulta->execute();
-
-        $dados = $consulta->fetch(PDO::FETCH_OBJ);
-        $id = $dados->id;
-        $login = $dados->login;
-        $ativo = $dados->ativo;
-        $criado = $dados->criado;
-    }
 ?>
 
 <div class="card shadow-lg">
@@ -29,7 +16,44 @@
     <div class="card-body">
         <form name="formCadastro" method="post" action="salvar/usuarios" data-parsley-valdiate="">            
             <input type="hidden" readonly name="id" id="id" class="form-control" value="<?=$id?>">
+
+            <label for="idfuncionario">Selecione um Funcionário:</label>
+            <select name="idfuncionario" id="idfuncionario" required data-parsley-required-message="Selecione uma pessoa." 
+                class="form-control" > 
+                    <option  value=""></option>
+                    <?php
+                        if(!empty($id)){
+                            $sql = "select f.id as id, p.NOME as nome, f.login as login, f.ATIVO as ativo, f.CRIADO as criado  from funcionario f join pessoa p on f.IDPESSOA  = p.ID where f.id = :id limit 1";
+                            $consulta = $pdo->prepare($sql);
+                            $consulta->bindParam(":id",$id);
+                            $consulta->execute();
+                    
+                            $dados = $consulta->fetch(PDO::FETCH_OBJ);
+                            $id = $dados->id;
+                            $login = $dados->login;
+                            $ativo = $dados->ativo;
+                            $criado = $dados->criado;
+                            $fnome = $dados->nome;
+
+                            echo "<option value='{$id}'>{$fnome}</option>";
+                        }else{
+
+                            $sql= "select f.id as id, p.NOME as nome, f.login  from funcionario f join pessoa p on f.idpessoa  = p.ID where login is null";
+                            $consultaPessoa = $pdo->prepare($sql);
+                            $consultaPessoa->execute();
     
+                            while ($dadosPessoa = $consultaPessoa->fetch(PDO::FETCH_OBJ)){
+                                //Separar dados
+                                $id = $dadosPessoa->id;
+                                $nome = $dadosPessoa->nome;
+    
+                                echo "<option value='{$id}'>{$nome}</option>";
+                            }
+                        }
+                    ?>
+                >
+            </select>
+
             <label for="login">Login do Usuario:</label>
             <input type="text" name="login" id="login" class="form-control" required 
             data-parsley-required-message="Preencha Este Campo" value="<?=$login?>" autocomplete="nope">
@@ -58,4 +82,5 @@
 </div>
 <script>
     $("#ativo").val("<?=$ativo?>");
+    $("#idfuncionario").val("<?=$id?>");
 </script>
