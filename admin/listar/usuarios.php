@@ -5,7 +5,7 @@
     <div class="card-header">
         <h2 class="float-left">Listar Usuarios</h2>
         <div class="float-right">
-            <a href="cadastros/usuarios" title="Cadastrar Novo Usuário" class="btn btn-primary rounded-pill">
+            <a href="cadastros/usuarios" title="Cadastrar Novo Usuário" class="btn btn-primary">
                 Cadastrar Usuário
             </a>
         </div>
@@ -36,8 +36,8 @@
                             <td width="200px"><?=$dados->modificado?></td>
                             <td width="200px">
                             <a href="cadastros/usuarios/<?=$dados->id?>" 
-                            title="Editar" class="btn btn-warning rounded-pill"><i class="fas fa-edit"></i>Editar</a>
-                            <a href="cadastros/habilitar/<?=$dados->id?>"class="btn btn-danger rounded-pill"><i class="fas fa-toggle-on"></i>Ativar</a>
+                            title="Editar" class="btn btn-warning"><i class="fas fa-edit"></i>Editar</a>
+                            <a href="cadastros/habilitar/<?=$dados->id?>"class="btn btn-danger"><i class="fas fa-toggle-on"></i>Ativar</a>
                             </td>
                         </tr>
                         <?php

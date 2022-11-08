@@ -11,7 +11,7 @@
         <div class="float-right">
             <a href="listar/moradores" 
             title="Listar Moradores" 
-            class="btn btn-primary rounded-pill">Listar Moradores</a>
+            class="btn btn-primary">Listar Moradores</a>
         </div>
     </div>
     <div class="card-body">
@@ -37,7 +37,7 @@
                 ?>
             </select>
             <br>
-            <button type="submit" class="btn btn-success rounded-pill">
+            <button type="submit" class="btn btn-success">
                 <i class="fas fa-check"></i> Salvar
             </button>
         </form>

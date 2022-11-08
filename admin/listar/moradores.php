@@ -2,7 +2,7 @@
     <div class="card-header">
         <h2 class="float-left">Listar Moradores</h2>
         <div class="float-right">
-            <a href="cadastros/usuarios" title="Cadastrar Novo Usuário" class="btn btn-primary rounded-pill">
+            <a href="cadastros/usuarios" title="Cadastrar Novo Usuário" class="btn btn-primary">
                 Cadastrar Usuário
             </a>
         </div>

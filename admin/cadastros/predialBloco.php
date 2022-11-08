@@ -22,7 +22,7 @@
             <input type="date" name="dataNascimento" id="dataNascimento" class="form-control" required 
             data-parsley-required-message="Preencha a data de nascimento" value="<?=$dataNascimento?>" autocomplete="nope">
             <br>
-            <button type="submit" class="btn btn-success rounded-pill">
+            <button type="submit" class="btn btn-success">
                 <i class="fas fa-check"></i> Salvar
             </button>
         </form>

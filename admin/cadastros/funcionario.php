@@ -29,7 +29,7 @@
         <div class="float-right">
             <a href="listar/funcionarios" 
             title="Listar Moradores" 
-            class="btn btn-primary rounded-pill">Listar Funcionarios</a>
+            class="btn btn-primary">Listar Funcionarios</a>
         </div>
     </div>
     <div class="card-body">
@@ -85,7 +85,7 @@
                 <option value="N">Nao</option>
             </select>
             <br>
-            <button type="submit" class="btn btn-success rounded-pill">
+            <button type="submit" class="btn btn-success">
                 <i class="fas fa-check"></i> Salvar
             </button>
         </form>

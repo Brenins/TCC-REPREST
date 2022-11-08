@@ -14,7 +14,6 @@
         }
 
         //se ja existe um usuario cadastrado com este login
-
         $sql ="select id from funcionario where login = :login AND id <> :id limit 1";
 
         $consulta = $pdo->prepare($sql);

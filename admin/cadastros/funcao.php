@@ -25,7 +25,7 @@
         <div class="float-right">
             <a href="listar/funcoes" 
             title="Listar Funcao" 
-            class="btn btn-primary rounded-pill">Listar Funções</a>
+            class="btn btn-primary">Listar Funções</a>
         </div>
     </div>
     <div class="card-body">
@@ -35,7 +35,7 @@
             <input type="text" name="nome" id="nome" class="form-control" required 
             data-parsley-required-message="Preencha o nome completo da função" value="<?=@$nome?>" autocomplete="nope">
             <br>
-            <button type="submit" class="btn btn-success rounded-pill">
+            <button type="submit" class="btn btn-success">
                 <i class="fas fa-check"></i> Salvar
             </button>
         </form>

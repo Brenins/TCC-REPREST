@@ -23,7 +23,7 @@
         <div class="float-right">
             <a href="listar/usuarios" 
             title="Listar Usuarios" 
-            class="btn btn-primary rounded-pill">Listar Usuarios</a>
+            class="btn btn-primary">Listar Usuarios</a>
         </div>
     </div>
     <div class="card-body">
@@ -44,7 +44,7 @@
                 <option value="N">Nao</option>
             </select>
             <br>
-            <button type="submit" class="btn btn-success rounded-pill">
+            <button type="submit" class="btn btn-success">
                 <i class="fas fa-check "></i> Salvar
             </button>
         </form>
