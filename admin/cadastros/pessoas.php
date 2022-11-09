@@ -41,7 +41,7 @@
             data-parsley-required-message="Preencha o cpf" value="<?=$cpf?>" autocomplete="nope">
             
             <label for="rg">RG:</label>
-            <input type="text" name="rg" id="rg" class="form-control" data-inputmask="'mask': '99.999.999-9'" required 
+            <input type="text" name="rg" id="rg" class="form-control"  maxlength="16" required 
             data-parsley-required-message="Preencha o RG" value="<?=$rg?>" autocomplete="nope">
 
             <label for="dataNascimento">Data de Nascimento:</label>

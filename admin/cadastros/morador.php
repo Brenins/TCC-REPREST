@@ -1,9 +1,23 @@
 <?php
+    if(!isset($page)) exit;
+    foreach($_POST as $key => $value){
+        $$key = trim ($value ?? NULL);
+    }
 
+    if(!empty($id)){
+        $sql = "select id, criado, modificado, idpessoa where  id = :id limit 1";
+        $consulta = $pdo->prepare($sql);
+        $consulta->bindParam(":id",$id);
+        $consulta->execute();
+
+        $dados = $consulta->fetch(PDO::FETCH_OBJ);
+        $id = $dados->id ?? NULL;
+        $idpessoa = $dados->idpessoa ?? NULL;
+        $criado = $dados->criado ?? NUll;
+        $modificado = $dados->modificado ?? NULL;
+    }
 
 ?>
-
-
 
 <div class="card">
     <div class="card-header">
@@ -18,12 +32,16 @@
         <form name="formCadastro" method="post" action="salvar/moradores" data-parsley-valdiate="">
             <input type="hidden" readonly name="id" id="id" class="form-control" value="<?=$id?>">
 
-            <label for="morador">Selecione uma pessoa para cadastrar como morador:</label>
-            <select name="morador" id="morador" required data-parsley-required-message="Selecione uma categoria." 
+            <div class="alert alert-warning" role="alert">
+                Abaixo estão listados apenas as pessoas que não estão definidas como moradores.
+            </div>
+
+            <label for="idpessoa">Selecione uma pessoa para cadastrar como morador:</label>
+            <select name="idpessoa" id="idpessoa" required data-parsley-required-message="Selecione uma categoria." 
             class="form-control">
                 <option value=""></option>
                 <?php
-                    $sql= "select id, nome from pessoa order by nome";
+                    $sql= "select p.id as id, p.nome as nome from morador m right join pessoa p on m.IDPESSOA = p.ID  where m.id is null";
                     $consultaCategoria = $pdo->prepare($sql);
                     $consultaCategoria->execute();
 

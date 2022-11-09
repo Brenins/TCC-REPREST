@@ -44,6 +44,10 @@
         <form name="formCadastro" method="post" action="salvar/funcionario" data-parsley-valdiate="">
             <input type="hidden" readonly name="id" id="id" class="form-control" value="<?=$id?>">
 
+            <div class="alert alert-warning" role="alert">
+                Abaixo estão listadas apenas as pessoas que não estão definidas como funcionários.
+            </div>
+
             <label for="idpessoa">Selecione uma pessoa para cadastrar como Funcionário:</label>
             <select name="idpessoa" id="idpessoa" required data-parsley-required-message="Selecione uma pessoa." 
                 class="form-control">

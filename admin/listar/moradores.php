@@ -10,16 +10,37 @@
     <div class="card-body">
         <table class="table table-bordered table-hover table-striped">
             <thead>
-
-            </thead>
-            <tbody>
                 <tr>
                     <td>ID</td>
                     <td>Nome</td>
                     <td>Criado</td>
-                    <td>Modificado</td>
-                    <td>Opções</td>
                 </tr>
+            </thead>
+            <tbody>
+                <?php
+                    
+                    $consulta = $pdo->prepare("select p.id as id, p.nome as nome, m.criado as criado from morador m inner join pessoa p on m.IDPESSOA = p.ID order by id;");
+
+                    $consulta->execute();
+
+                    while($dados = $consulta->fetch(PDO::FETCH_OBJ)
+                    ) {
+                        ?>
+                            <tr>
+                                <td width="70px"><?=$dados->id?></td>
+                                <td><?=$dados->nome?></td>
+                                <td><?=$dados->criado?></td>
+                                <!-- <td width="100px">
+                                    <a href="cadastros/pessoas/<?=$dados->id?>" 
+                                    title="Editar" class="btn btn-warning"><i class="fas fa-edit"></i>
+                                    </a>
+                                     <a href="javascript:excluir(PASSAR O ID)" 
+                                    title="Excluir" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                </td> -->
+                            </tr>
+                        <?php
+                    }
+                ?>
             </tbody>
         </table>
     </div>
