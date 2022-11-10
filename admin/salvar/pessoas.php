@@ -52,7 +52,7 @@
         if(!$consulta->execute()){
             mensagemErro("Nao foi possivel salvar o registro.");
         }else{
-            echo "<script>location.href='listar/pessoas';</script>";
+            mensagemSucesso("listar/pessoas");
         }
     }
 ?>

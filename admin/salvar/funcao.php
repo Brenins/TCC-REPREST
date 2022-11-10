@@ -43,11 +43,6 @@
         if(!$consulta->execute()){
             mensagemErro("Não foi possível salvar os dados.");
         }
-        echo "<script>location.href='listar/funcoes';</script>";
-
-        exit;
+        mensagemSucesso("listar/funcoes");
     }
-
-    //mostrar uma mensagem de rro
-    mensagemErro("Requisição Inválida");
 ?>

@@ -74,9 +74,7 @@
         } */
 
         if($consulta->execute()){
-            echo "<script>location.href='listar/usuarios';</script>";
-        }else{
-
+            mensagemSucesso("listar/usuarios");
         }
     }
 ?>

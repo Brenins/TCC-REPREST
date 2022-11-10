@@ -15,12 +15,19 @@
                         <a class="dropdown-item" href="cadastros/funcionario">Cadastrar Funcionário</a>
                         <a class="dropdown-item" href="listar/funcionarios">Lista de Funcionários</a>
                         <a class="dropdown-item" href="cadastros/funcao">Cadastro de Função</a>
+                        <a class="dropdown-item" href="listar/usuarios">Listar Usuarios</a>
                     </div>
                 </li>
             </ul>
         </div>
     </div>
     <div class="card-body">
+        <?php
+            if(empty($id)){
+                echo "<div class='alert alert-warning' role='alert'> Abaixo estão listados apenas os que não estão definidos como moradores.</div> ";
+            }
+        ?>
+        
         <form name="formCadastro" method="post" action="salvar/usuarios" data-parsley-valdiate="">            
             <input type="hidden" readonly name="id" id="id" class="form-control" value="<?=$id?>">
 
