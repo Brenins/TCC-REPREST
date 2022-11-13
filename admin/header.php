@@ -51,7 +51,7 @@
     <div id="collapseGestao" class="collapse" aria-labelledby="headingGestao" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="cadastros/GestaoPessoas"><i class="fas fa-users"></i> Pessoas</a>
-                <a class="collapse-item" href="cadastros/produtos"><i class="fas fa-building"></i> Edificio</a>
+                <a class="collapse-item" href="cadastros/GestaoPredial"><i class="fas fa-building"></i> Edificio</a>
             </div>
         </div>
     </li>
