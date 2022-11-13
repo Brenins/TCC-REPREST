@@ -1,21 +1,6 @@
 <?php 
     //se n existir variavel page
     if(!isset($page)) exit;
-    foreach($_POST as $key => $value){
-        $$key = trim ($value ?? NULL);
-    }
-    
-    if(!empty($id)){
-        $sql = "select id, descricao from categoria where id = :id limit 1";
-        $consulta = $pdo->prepare($sql);
-        $consulta->bindParam(":id",$id);
-        $consulta->execute();
-
-        $dados = $consulta->fetch(PDO::FETCH_OBJ);
-
-        $id = $dados->id ?? NULL;
-        $descricao = $dados->descricao ?? NULL;
-    }
 ?>
 
 <div class="card shadow-lg">
