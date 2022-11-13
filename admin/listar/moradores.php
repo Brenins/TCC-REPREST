@@ -45,3 +45,6 @@
         </table>
     </div>
 </div>
+<script>
+    $(".table").dataTable();
+</script>

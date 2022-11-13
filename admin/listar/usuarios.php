@@ -16,6 +16,7 @@
                 <tr>
                     <td>Id</td>
                     <td>Login</td>
+                    <td>Funcionário</td>
                     <td>Ativo</td>
                     <td>Criado Por</td>
                     <td>Modificado Por</td>
@@ -24,16 +25,17 @@
             </thead>
             <tbody>
                 <?php
-                    $consulta = $pdo->prepare("select id, login, ativo, criado, modificado from funcionario order by id");
+                    $consulta = $pdo->prepare("select f.id as id, f.login as login, p.nome as funcionario, f.ativo as ativo, f.criado as criado, f.modificado as modificado  from funcionario f join pessoa p on f.idpessoa = p.id  order by id");
                     $consulta->execute();
                     while($dados = $consulta->fetch(PDO::FETCH_OBJ)){
                         ?>
                         <tr>
                             <td width="20px"><?=$dados->id?></td>
-                            <td width="200px"><?=$dados->login?></td>
-                            <td width="20px"><?=$dados->ativo?></td>
-                            <td width="200px"><?=$dados->criado?></td>
-                            <td width="200px"><?=$dados->modificado?></td>
+                            <td width="120px"><?=$dados->login?></td>
+                            <td width="120px"><?=$dados->funcionario?></td>
+                            <td width="15px"><?=$dados->ativo?></td>
+                            <td width="120px"><?=$dados->criado?></td>
+                            <td width="120px"><?=$dados->modificado?></td>
                             <td width="200px">
                             <a href="cadastros/usuarios/<?=$dados->id?>" 
                             title="Editar" class="btn btn-warning"><i class="fas fa-edit"></i>Editar</a>
