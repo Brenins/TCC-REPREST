@@ -10,7 +10,7 @@
             <script>
               Swal.fire({
                 icon: 'error',
-                title: 'Pera la amigao...',
+                title: 'Atenção!',
                 text: 'Preencha os campos corretamente.',
               }).then((result) => {
                  history.back(); 
@@ -32,9 +32,9 @@
         //Verificar se trouxe resultado
 
         if(!isset($dados->id)){
-          mensagemErro("Usuario nao encontrado ou desativado.");
+          mensagemErro("Usuário ou senha incorreta.");
         }else if(!password_verify($senha,$dados->senha)){
-          mensagemErro("Senha incorreta.");
+          mensagemErro("Usuário ou senha incorreta.");
         };
         
         //dados sessao
@@ -48,7 +48,7 @@
 ?>
 
 <div class="login" style="border-radius: 24px; background-color: white;">
-    <h1 class="text-center"><img src="images/logo2.png" alt="Vitrine Logo"></h1>
+    <h1 class="text-center" ><img src="images/Represt-black.png" width="256" height="256" alt="Vitrine Logo"></h1>
     <form name="formLogin" method="post">
         <label for="Login" style="font-weight:bold;">Login:</label>
         <input type="text" name="login" id="login" class="form-control" required>
