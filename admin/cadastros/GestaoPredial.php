@@ -12,8 +12,8 @@
         <div class="alert alert-primary" role="alert">
             Nesta tela você poderá gerenciar toda a parte de setorização do edifício e vínculo de moradores.
         </div>
-        <ul class="nav nav-pills w-auto p-3">
-            <li class="nav-item dropdown mx-3">
+        <ul class="nav nav-pills w-auto p-3 ">
+            <li class="nav-item dropdown m-3">
                 <a class="nav-link active dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="bi bi-building"></i> Cadastramento de Setores</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">Cadastrar blocos habitacionais</a>
@@ -25,7 +25,7 @@
 
                 </div>
             </li>
-            <li class="nav-item">
+            <li class="nav-item m-3" >
                 <a class="nav-link active" href="#"><i class="bi bi-person-plus-fill"></i> Vínculo de moradores</a>
             </li>
         </ul>

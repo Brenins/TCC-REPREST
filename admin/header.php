@@ -32,9 +32,10 @@
         <i class="fas fa-ticket-alt"></i>
         <span>Reservas e Empréstimos</span>
     </a>
-    <div id="collapseTree" class="collapse" aria-labelledby="headingTree" data-parent="#accordionSidebar">
+        <div id="collapseTree" class="collapse" aria-labelledby="headingTree" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="cadastros/categorias"><i class="fas fa-tags"></i> Não Desenvolvido</a>
+                <a class="collapse-item" href="cadastros/GestaoReservas"><i class="fas fa-calendar-plus"></i> Gestão de Reservas</a>
+                <a class="collapse-item" href="cadastros/GestaoEmprestimos"><i class="fas fa-hands-helping"></i></i> Gestão de Empréstimos</a>
             </div>
         </div>
     </li>
@@ -86,7 +87,7 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="relatorios/produtos"><i class="fas fa-shopping-cart"></i> Não Desenvolvido</a>
+                <a class="collapse-item" href="#"><i class="fas fa-wallet"></i> Caixa</a>
             </div>
         </div>
     </li>
