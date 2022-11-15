@@ -18,7 +18,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Sistema de e-commerce BurnsShop">
+    <meta name="description" content="REPREST">
     <meta name="author" content="">
 
     <title>REPREST</title>
