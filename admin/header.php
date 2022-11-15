@@ -39,7 +39,6 @@
             </div>
         </div>
     </li>
-
     <hr class="sidebar-divider">
 
    
@@ -63,7 +62,7 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseItens"
             aria-expanded="true" aria-controls="collapseItens">
             <i class="fas fa-tools"></i>
-            <span>Inventário de Itens</span>
+            <span>Galpão</span>
         </a>
         <div id="collapseItens" class="collapse" aria-labelledby="headingItens" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
@@ -87,7 +86,7 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="#"><i class="fas fa-wallet"></i> Caixa</a>
+                <a class="collapse-item" href="#"><i class="fas fa-wallet"></i> Relação de Caixa</a>
             </div>
         </div>
     </li>
@@ -149,7 +148,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                            Olá <?=$_SESSION['usuario']['login']?> <i class="fas fa-ellipsis-v"></i>
+                            Olá <?=$_SESSION['usuario']['login']?> <i class="fas fa-user-circle"></i>
                         </span>
                         
                     </a>

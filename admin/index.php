@@ -21,10 +21,10 @@
     <meta name="description" content="Sistema de e-commerce BurnsShop">
     <meta name="author" content="">
 
-    <title>ADMIN - Vitrine</title>
+    <title>REPREST</title>
 
     <base href="<?php echo "http://".$_SERVER["HTTP_HOST"].$_SERVER["SCRIPT_NAME"]; ?>">
-
+    <link rel="icon" type="image/x-icon" href="./images/ico.png">
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
 
