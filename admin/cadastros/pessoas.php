@@ -44,6 +44,10 @@
             <input type="text" name="rg" id="rg" class="form-control"  maxlength="16" required 
             data-parsley-required-message="Preencha o RG" value="<?=$rg?>" autocomplete="nope">
 
+            <label for="celular">Celular/Whatsapp:</label>
+            <input type="text" name="celular" id="celular" class="form-control"  maxlength="16" required 
+            data-parsley-required-message="Preencha o número de celular" value="<?=@$celular?>" autocomplete="nope">
+
             <label for="dataNascimento">Data de Nascimento:</label>
             <input type="date" name="dataNascimento" id="dataNascimento" class="form-control" required 
             data-parsley-required-message="Preencha a data de nascimento" value="<?=$dataNascimento?>" autocomplete="nope">
