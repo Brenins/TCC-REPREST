@@ -28,8 +28,8 @@
             <input type="hidden" readonly name="id" id="id"
             class="form-control" value="<?=$id?>">
 
-            <label for="nome">Nome do Bloco:</label>
-            <input type="text" name="nome" id="nome"
+            <label for="nomeBloco">Nome do Bloco:</label>
+            <input type="text" name="nomeBloco" id="nomeBloco"
             class="form-control"  required 
             data-parsley-required-message="Por favor, preencha este campo"
             value="<?=@$nome?>">

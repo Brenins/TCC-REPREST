@@ -24,7 +24,7 @@
                     while($dados = $consulta->fetch(PDO::FETCH_OBJ)){
                         ?>
                         <tr>
-                            <td><?=$dados->id?></td>
+                            <td width="30px"><?=$dados->id?></td>
                             <td><?=$dados->nome?></td>
                             <td><?=$dados->sigla?></td>
                             <td width="200px"   class="text-center">

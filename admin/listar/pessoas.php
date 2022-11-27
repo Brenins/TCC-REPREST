@@ -22,6 +22,7 @@
                     <td>CPF</td>
                     <td>RG</td>
                     <td>Data de Nascimento</td>
+                    <td>N° Celular</td>
                     <td>Criado Por</td>
                     <td>Modificado Por</td>
                     <td>Opções</td>
@@ -32,22 +33,24 @@
                 <?php
                     //Selecionar todas as categorias
                     
-                    $consulta = $pdo->prepare("select id, nome, cpf, rg, dtnascimento, criado, modificado from pessoa order by id;");
+                    $consulta = $pdo->prepare("select id, nome, cpf, rg, dtnascimento, telefone, criado, modificado from pessoa order by id;");
 
                     $consulta->execute();
 
                     while($dados = $consulta->fetch(PDO::FETCH_OBJ)
                     ) {
+                        $testeData = minhaData($dados->dtnascimento);
                         ?>
                             <tr>
-                                <td width="70px"><?=$dados->id?></td>
+                                <td width="30px"><?=$dados->id?></td>
                                 <td><?=$dados->nome?></td>
-                                <td><?=$dados->cpf?></td>
+                                <td data-inputmask="'mask': '999.999.999-99'"><?=$dados->cpf?></td>
                                 <td><?=$dados->rg?></td>
-                                <td><?=$dados->dtnascimento?></td>
+                                <td><?=$testeData?></td>
+                                <td><?=$dados->telefone?></td>
                                 <td><?=$dados->criado?></td>
                                 <td><?=$dados->modificado?></td>
-                                <td width="100px">
+                                <td width="90px">
                                     <a href="cadastros/pessoas/<?=$dados->id?>" 
                                     title="Editar" class="btn btn-warning"><i class="fas fa-edit"></i>
                                     </a>

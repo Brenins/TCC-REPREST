@@ -17,10 +17,10 @@
                 <a class="nav-link active dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="bi bi-building"></i> Cadastramento de Setores</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="cadastros/blocos">Cadastrar blocos habitacionais</a>
-                    <a class="dropdown-item" href="#">Cadastrar apartamento</a>
-                    <a class="dropdown-item" href="#">Cadastrar areas de lazer</a>
+                    <a class="dropdown-item" href="cadastros/apartamentos">Cadastrar apartamento</a>
+                    <a class="dropdown-item" href="#">Cadastrar area de lazer</a>
                     <a class="dropdown-item" href="listar/blocos">Listar blocos habitacionais</a>
-                    <a class="dropdown-item" href="#">Listar Apartamentos</a>
+                    <a class="dropdown-item" href="#">Listar apartamentos</a>
                     <a class="dropdown-item" href="#">Listar areas de lazer</a>
 
                 </div>

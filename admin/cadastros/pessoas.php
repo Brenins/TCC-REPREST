@@ -1,10 +1,12 @@
 <?php
     if(!isset($page)) exit;
 
-    $nome = $cpf = $rg = $dataNascimento = NULL;
-
+    $nome = $cpf = $rg = $dataNascimento = NULL; 
+    
+    $cpf = teste($cpf);
+    
     if(!empty($id)){
-        $sql = "select id, nome,cpf ,rg , dtnascimento from pessoa where id = :id limit 1";
+        $sql = "select id, nome,cpf ,rg , dtnascimento, telefone from pessoa where id = :id limit 1";
         $consulta = $pdo->prepare($sql);
         $consulta->bindParam(":id",$id);
         $consulta->execute();
@@ -12,9 +14,10 @@
         $dados = $consulta->fetch(PDO::FETCH_OBJ);
         $id = $dados->id;
         $nome = $dados->nome;
-        $cpf = $dados->cpf;
+        $cpf = teste($dados->cpf);
         $rg = $dados->rg;
         $dataNascimento = $dados->dtnascimento;
+        $celular = $dados->telefone;
     }
 ?>
 
@@ -46,7 +49,7 @@
 
             <label for="celular">Celular/Whatsapp:</label>
             <input type="text" name="celular" id="celular" class="form-control"  maxlength="16" required 
-            data-parsley-required-message="Preencha o número de celular" value="<?=@$celular?>" autocomplete="nope">
+            data-parsley-required-message="Preencha o número de celular" value="<?=@$celular?>" data-inputmask="'mask': '(99)99999-9999'"autocomplete="nope">
 
             <label for="dataNascimento">Data de Nascimento:</label>
             <input type="date" name="dataNascimento" id="dataNascimento" class="form-control" required 

@@ -16,6 +16,20 @@
     }//Fim da funcao
 
 
+    function minhaData($data){
+        $pedacos = explode("-", $data);
+
+        return  $novo = "$pedacos[2]/$pedacos[1]/$pedacos[0]";
+    }
+
+    function teste($CPF){
+        $pesquisa = array(".","-");
+        $atualiza = array("");
+        $resultado = str_replace($pesquisa,$atualiza,$CPF);
+
+        return $resultado;
+    }
+
     function mensagemErro2($msg){
         ?>
         <script>
@@ -32,8 +46,6 @@
             exit;
     }//Fim da funcao
 
-
-
     function mensagemSucesso($location){
         ?>
         <script>
@@ -48,6 +60,15 @@
         <?php
             exit;
     }//Fim da funcao
+
+    function enviaZap($numero,$mensagem){
+        $url = "https://wa.me/$numero?text=$mensagem";
+        ?>
+        <script> window.open(<?=$url?>)</script>
+        <?php
+    }
+
+
 ?>
 
 
