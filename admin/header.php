@@ -86,7 +86,7 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="#"><i class="fas fa-wallet"></i> Relação de Caixa</a>
+                <a class="collapse-item" href="cadastros/pix"><img src="images/pix.svg" alt="pix" style="width: 18px;"> Configurar PIX</a>
             </div>
         </div>
     </li>
@@ -120,21 +120,14 @@
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
             <!-- Sidebar Toggle (Topbar) -->
-            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                <i class="fa fa-bars"></i>
-            </button>
+            
 
 
             <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">
 
                 <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                <li class="nav-item dropdown no-arrow d-sm-none">
-                    <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-search fa-fw"></i>
-                    </a>
-                </li>
+                
 
                 <!-- Nav Item - Alerts -->
                 
