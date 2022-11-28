@@ -1,9 +1,7 @@
 <?php 
     //se n existir variavel page
-    if(!isset($page)) exit;
-    
+    if(!isset($page)) exit;  
 ?>
-
 <div class="card">
     <div class="card-header">
         <h2 class="float-left">Gestão do Edifício</h2>
@@ -18,10 +16,10 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="cadastros/blocos">Cadastrar blocos habitacionais</a>
                     <a class="dropdown-item" href="cadastros/apartamentos">Cadastrar apartamento</a>
-                    <a class="dropdown-item" href="#">Cadastrar area de lazer</a>
+                    <a class="dropdown-item" href="cadastros/lazer">Cadastrar area de lazer</a>
                     <a class="dropdown-item" href="listar/blocos">Listar blocos habitacionais</a>
-                    <a class="dropdown-item" href="#">Listar apartamentos</a>
-                    <a class="dropdown-item" href="#">Listar areas de lazer</a>
+                    <a class="dropdown-item" href="listar/apartamentos">Listar apartamentos</a>
+                    <a class="dropdown-item" href="listar/lazer">Listar areas de lazer</a>
 
                 </div>
             </li>
