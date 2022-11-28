@@ -15,9 +15,6 @@
             <li class="nav-item m-3">
                 <a class="nav-link active" href="cadastros/pessoas"><i class="fas fa-list-alt"></i> Lista de Empréstimos</a>
             </li>
-            <li class="nav-item m-3">
-                <a class="nav-link active" href="cadastros/pessoas"><i class="fas fa-toolbox"></i> Itens disponiveis</a>
-            </li>
         </ul>
     </div>
 </div>

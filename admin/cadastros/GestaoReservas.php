@@ -15,9 +15,6 @@
             <li class="nav-item m-3">
                 <a class="nav-link active" href="cadastros/pessoas"><i class="fas fa-list-alt"></i> Lista de Reservas</a>
             </li>
-            <li class="nav-item m-3">
-                <a class="nav-link active" href="cadastros/pessoas"><i class="fas fa-map-marker-alt"></i> Locais disponiveis</a>
-            </li>
         </ul>
     </div>
 </div>
