@@ -51,21 +51,17 @@
             $insert = $pdo->prepare($sql);
             $insert->bindParam(":id", $id);
             $insert->bindParam(":nome", $nomeBloco);
-            echo "Update Nome";
-
         }elseif(!empty($id) && $nomeBloco == $blocoNomeId ){//Update sigla
             $sql = "update bloco set sigla = :sigla  where id = :id limit 1";
             $insert = $pdo->prepare($sql);
             $insert->bindParam(":id", $id);
             $insert->bindParam(":sigla", $sigla);
-            echo "Update SIGLA";
-        }else{
+        }elseif(!empty($id)){
             $sql = "update bloco set nome = :nome, sigla = :sigla where id = :id limit 1";
             $insert = $pdo->prepare($sql);
             $insert->bindParam(":id", $id);
             $insert->bindParam(":nome", $nomeBloco);
             $insert->bindParam(":sigla", $sigla);
-            echo "UPdate GEral";
         }
 
         if($insert->execute()){

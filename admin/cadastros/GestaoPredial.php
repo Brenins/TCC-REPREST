@@ -26,7 +26,7 @@
                 </div>
             </li>
             <li class="nav-item m-3" >
-                <a class="nav-link active" href="#"><i class="bi bi-person-plus-fill"></i> Vínculo de moradores</a>
+                <a class="nav-link active" href="cadastros/vinculoMoradores"><i class="bi bi-person-plus-fill"></i> Vínculo de moradores</a>
             </li>
         </ul>
         
