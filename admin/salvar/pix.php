@@ -6,9 +6,11 @@
             $$key = trim ($value ?? NULL);
         }
         
-        print_r($_POST);
+        $UPR1 = $recebedor;
+        $UPR2 = $cidade;
 
-    
+        $recebedor = strtoupper($UPR1);
+        $cidade = strtoupper($UPR2);
 
         $sql = "update pix set chave = :chave, 
         recebedor = :recebedor, cidade_rec = :cidade where id = :id limit 1";

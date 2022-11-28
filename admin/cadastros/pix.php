@@ -38,7 +38,7 @@
             value="<?=@$cidade?>">
             <br>
             <button type="submit" class="btn btn-success">
-                <i class="fas fa-check"></i> Cadastrar
+                <i class="fas fa-check"></i> Salvar
             </button>
         </form>
     </div>

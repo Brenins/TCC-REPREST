@@ -4,7 +4,7 @@
     foreach($_POST as $key => $value){
         $$key = trim ($value ?? NULL);
     }
-    
+
     if(!empty($id)){
         $sql = "select id, descricao from categoria where id = :id limit 1";
         $consulta = $pdo->prepare($sql);

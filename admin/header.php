@@ -87,6 +87,7 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="cadastros/pix"><img src="images/pix.svg" alt="pix" style="width: 18px;"> Configurar PIX</a>
+                <a class="collapse-item" href="listar/taxas"><img src="images/pix.svg" alt="pix" style="width: 18px;"> Taxas</a>
             </div>
         </div>
     </li>
