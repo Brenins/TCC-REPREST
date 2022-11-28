@@ -19,7 +19,7 @@
 
 ?>
 
-<div class="card">
+<div class="card shadow-lg">
     <div class="card-header">
         <h2 class="float-left">Cadastrar Morador</h2>
         <div class="float-right">

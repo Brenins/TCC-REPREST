@@ -2,7 +2,7 @@
     //se n existir variavel page
     if(!isset($page)) exit;  
 ?>
-<div class="card">
+<div class="card shadow-lg">
     <div class="card-header">
         <h2 class="float-left">Gestão do Edifício</h2>
     </div>

@@ -4,9 +4,9 @@
 ?>
 
 
-<div class="card">
+<div class="card shadow-lg">
     <div class="card-header">
-        <h2 class="float-left">Balanço de Itens</h2>
+        <h2 class="float-left">Lista de Itens</h2>
         <div class="float-right">
             <a href="cadastros/itens" title="Cadastrar Itens"
             class="btn btn-primary">
