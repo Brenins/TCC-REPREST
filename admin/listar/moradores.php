@@ -11,15 +11,18 @@
         <table class="table table-bordered table-hover table-striped">
             <thead>
                 <tr>
-                    <td>ID</td>
-                    <td>Nome</td>
+                    <td>Id</td>
+                    <td>Morador</td>
                     <td>Criado</td>
+                    <td>Modificado</td>
+                    <td>Ativo</td>
                 </tr>
             </thead>
             <tbody>
                 <?php
                     
-                    $consulta = $pdo->prepare("select p.id as id, p.nome as nome, m.criado as criado from morador m inner join pessoa p on m.IDPESSOA = p.ID order by id;");
+                    $consulta = $pdo->prepare("select p.id as id, p.nome as morador, m.criado as criado, 
+                    m.modificado as modificado, m.ativo as ativo from morador m inner join pessoa p on m.idpessoa = p.id order by id;");
 
                     $consulta->execute();
 
@@ -28,8 +31,10 @@
                         ?>
                             <tr>
                                 <td width="70px"><?=$dados->id?></td>
-                                <td><?=$dados->nome?></td>
+                                <td><?=$dados->morador?></td>
                                 <td><?=$dados->criado?></td>
+                                <td><?=$dados->modificado?></td>
+                                <td><?=$dados->ativo?></td>
                                 <!-- <td width="100px">
                                     <a href="cadastros/pessoas/<?=$dados->id?>" 
                                     title="Editar" class="btn btn-warning"><i class="fas fa-edit"></i>
@@ -46,5 +51,9 @@
     </div>
 </div>
 <script>
-    $(".table").dataTable();
+    $(".table").dataTable({
+        language: {
+            url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/pt-BR.json',
+        },
+    });
 </script>

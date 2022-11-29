@@ -50,17 +50,9 @@
     </div>
 </div>
 <script>
-    $(".table").dataTable();
-    function excluir(id) {
-        Swal.fire({
-            title: 'Você deseja realmente excluir este item?',
-            showCancelButton: true,
-            confirmButtonText: 'Excluir',
-            cancelButtonText: 'Cancelar',
-            }).then((result) => {
-            if (result.isConfirmed) {
-                location.href='excluir/produtos/'+id;
-            } 
-        })
-    }
+    $(".table").dataTable({
+        language: {
+            url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/pt-BR.json',
+        },
+    });
 </script>

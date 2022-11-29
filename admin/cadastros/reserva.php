@@ -1,6 +1,6 @@
 <?php
 
-
+    if ( !isset ( $page ) ) exit;
 
 
 ?>
@@ -12,7 +12,7 @@
         </h2>
     </div>
     <div class="card-body">
-        <form name="formCadastro" method="post" action="salvar/reservas" data-parsley-validate="">
+        <form name="formCadastro" method="post" action="salvar/reserva" data-parsley-validate="">
             <input type="hidden" readonly name="id" id="id"
             class="form-control" value="<?=$id?>">
 
@@ -28,20 +28,52 @@
             data-parsley-required-message="Data de inicio obrigatória."
             value="<?=$dtinicio?>">
 
-
-
             <label for="dtFim">Fim do evento:</label>
             <input type="date" name="dtFim" id="dtFim"
             class="form-control" required
             data-parsley-required-message="Data de fim obrigatória."
             value="<?=$dtfim?>">
 
-            <label for="obs">Observações:</label>
-            <input type="obs" name="obs" id="obs"
-            class="form-control" required
-            data-parsley-required-message="Preencha a observação"
-            value="<?=$obs?>">
+            <label for="apartamento">Selecione o morador:</label>
+            <select name="apartamento" id="apartamento" required data-parsley-required-message="Selecione um morador" 
+            class="form-control">
+                <option value=""></option>
+                <?php
+                    $sql= "select a.id as id , a.numeroap as apartamento , p.nome as morador  
+                    from apartamento a left join morador m on a.idmorador = m.id 
+                    left join pessoa p on m.idpessoa = p.id ";
+                    $consulta = $pdo->prepare($sql);
+                    $consulta->execute();
+
+                    while ($dados = $consulta->fetch(PDO::FETCH_OBJ)){
+                        //Separar dados
+                        $id = $dados->id;
+                        $apartamento = $dados->apartamento;
+                        $morador = $dados->morador;
+
+                        echo "<option value='{$id}'>$morador - Apartamento: $apartamento</option>";
+                    }
+                ?>
+            </select>
             
+            <label for="local">Selecione o local de lazer para reserva:</label>
+            <select name="local" id="local" required data-parsley-required-message="Selecione um local" 
+            class="form-control">
+                <option value=""></option>
+                <?php
+                    $sql= "select id, nome from `local` l order by id";
+                    $consulta = $pdo->prepare($sql);
+                    $consulta->execute();
+
+                    while ($dados = $consulta->fetch(PDO::FETCH_OBJ)){
+                        //Separar dados
+                        $id = $dados->id;
+                        $nome = $dados->nome;
+
+                        echo "<option value='{$id}'>{$nome}</option>";
+                    }
+                ?>
+            </select>
             <br>
             <button type="submit" class="btn btn-success">
                 <i class="fas fa-check"></i> Salvar
