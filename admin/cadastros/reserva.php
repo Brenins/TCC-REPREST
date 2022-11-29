@@ -1,8 +1,5 @@
 <?php
-
     if ( !isset ( $page ) ) exit;
-
-
 ?>
 
 <div class="card">
@@ -20,7 +17,7 @@
             <input type="text" name="descricao" id="descricao"
             class="form-control" required
             data-parsley-required-message="Preencha este campo"
-            value="<?=$descricao?>">
+            value="<?=@$descricao?>">
 
             <label for="dtInicio">Inicio do evento:</label>
             <input type="date" name="dtInicio" id="dtInicio"
@@ -74,6 +71,12 @@
                     }
                 ?>
             </select>
+
+            <label for="obs">Observações:</label>
+            <input type="text" name="obs" id="obs"
+            class="form-control"
+            value="<?=@$obs?>">
+
             <br>
             <button type="submit" class="btn btn-success">
                 <i class="fas fa-check"></i> Salvar

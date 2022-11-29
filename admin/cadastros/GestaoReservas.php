@@ -13,7 +13,7 @@
                 <a class="nav-link active" href="cadastros/reserva"><i class="fas fa-calendar-plus"></i> Nova Reserva</a>
             </li>
             <li class="nav-item m-3">
-                <a class="nav-link active" href="cadastros/pessoas"><i class="fas fa-list-alt"></i> Lista de Reservas</a>
+                <a class="nav-link active" href="listar/reservas"><i class="fas fa-list-alt"></i> Lista de Reservas</a>
             </li>
         </ul>
     </div>
