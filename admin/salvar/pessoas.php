@@ -1,9 +1,9 @@
 <?php
     //Se nao existir a pagina
     if(!isset($page))exit;
-
     if($_POST){
 
+        
         //Recuperar os dados enviados
         foreach($_POST as $key => $value){
             $$key = trim ($value ?? NULL);
@@ -11,34 +11,22 @@
 
         $cpf = teste($cpf);
 
-        //se ja existe um cpf cadastrado com este login
+        //se ja existe um cpf cadastrado
 
-        $sql ="select id from pessoa where cpf = :cpf AND id <> :id limit 1";
+        $sql ="select id from pessoa where cpf = :cpf AND id <> :idpessoa limit 1";
 
         $consulta = $pdo->prepare($sql);
         $consulta->bindParam(":cpf", $cpf);
-        $consulta->bindParam(":id", $id);
+        $consulta->bindParam(":idpessoa", $idpessoa);
         $consulta->execute();
         
         $dados = $consulta->fetch(PDO::FETCH_OBJ);
 
         if(!empty($dados->id)){
-            mensagemErro("CPF registrado no sistema, por favor insira outro CPF.");
+            mensagemErro("Preenchido");
         }
 
 
-        $sql ="select id from pessoa where rg = :rg AND id <> :id limit 1";
-
-        $consulta = $pdo->prepare($sql);
-        $consulta->bindParam(":rg", $rg);
-        $consulta->bindParam(":id", $id);
-        $consulta->execute();
-        
-        $dados = $consulta->fetch(PDO::FETCH_OBJ);
-
-        if(!empty($dados->id)){
-            mensagemErro("CPF registrado no sistema, por favor insira outro CPF.");
-        }
 
 
         function validaCPF($cpf) {
@@ -72,7 +60,7 @@
 
         ValidaCPF($cpf);
 
-        if ( empty ( $id ) ) {
+        if ( empty ( $idpessoa ) ) {
             
             $celular = teste($celular);
 
@@ -98,7 +86,7 @@
             $consulta->bindParam(":dtnascimento", $dataNascimento);
             $consulta->bindParam(":telefone", $celular);
             $consulta->bindParam(":modificado",$_SESSION['usuario']['login']);
-            $consulta->bindParam(":id", $id);
+            $consulta->bindParam(":id", $idpessoa);
         }
 
         if(!$consulta->execute()){

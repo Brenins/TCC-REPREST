@@ -73,7 +73,7 @@
 <body id="page-top" style="background-color: #256D85 ;">
     <?php
         require "funcoes.php";
-
+        require "pixphp/funcoes_pix.php";
         //Verificar login existente
         if(!isset($_SESSION["usuario"])){
             //Inserir tela de login

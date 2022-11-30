@@ -12,7 +12,7 @@
         $consulta->execute();
 
         $dados = $consulta->fetch(PDO::FETCH_OBJ);
-        $id = $dados->id;
+        $idpessoa = $dados->id;
         $nome = $dados->nome;
         $cpf = teste($dados->cpf);
         $rg = $dados->rg;
@@ -33,7 +33,7 @@
     </div>
     <div class="card-body">
         <form name="formCadastro" method="post" action="salvar/pessoas" data-parsley-valdiate="">
-            <input type="hidden" readonly name="id" id="id" class="form-control" value="<?=$id?>">
+            <input type="hidden" readonly name="idpessoa" id="idpessoa" class="form-control" value="<?=$idpessoa?>">
             
             <label for="nome">Nome Completo:</label>
             <input type="text" name="nome" id="nome" class="form-control" required 
@@ -44,7 +44,7 @@
             data-parsley-required-message="Preencha o cpf" value="<?=$cpf?>" autocomplete="nope">
             
             <label for="rg">RG:</label>
-            <input type="text" name="rg" id="rg" class="form-control"  maxlength="16" required 
+            <input type="text" name="rg" id="rg" class="form-control"  maxlength="9" required 
             data-parsley-required-message="Preencha o RG" value="<?=$rg?>" autocomplete="nope">
 
             <label for="celular">Celular/Whatsapp:</label>

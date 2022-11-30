@@ -1,4 +1,6 @@
 <?php
+
+    
     //Janela de Erro
     function mensagemErro($msg){
         ?>
@@ -46,6 +48,32 @@
             exit;
     }//Fim da funcao
 
+
+    function enviarCobranca($chave, $valor, $nomeMorador, $telefone){
+        ?>
+        <script>
+            Swal.fire({
+                    imageUrl: 'images/zap.png',
+                    title: 'Verifique as informações antes de enviar!',
+                    html: 
+                    '<p>PIX: <?=$chave?></p>' + 
+                    '<p>Valor: R$<?=$valor?></p>' +
+                    '<p>Morador: <?=$nomeMorador?>' +
+                    '<p>WhatsApp: <?=$telefone?></p>',
+                    confirmButtonText: 'OK',
+                }).then((result) => {
+                    window.location.href = 'https://wa.me/55<?=$telefone?>?text=Olá, estamos te enviando a chave para pagamento do seus débitos no valor de R$<?=$valor?>, CHAVE PARA PAGAMENTO: <?=$chave?> ';
+                })
+        </script>    
+        
+        <?php
+            exit;
+
+    }
+
+
+
+
     function mensagemSucesso($location){
         ?>
         <script>
@@ -67,6 +95,7 @@
         <script> window.open(<?=$url?>)</script>
         <?php
     }
+
 
 
 ?>
