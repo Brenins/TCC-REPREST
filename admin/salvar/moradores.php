@@ -22,16 +22,18 @@
 
         if(!empty($dados->idpessoa)){
             mensagemErro("Esta pessoa já é um Morador!");
-
         }
         
         if ( empty ( $id ) ) {
             
             //inserir no banco
 
-            $sql = "insert into morador (criado, idpessoa) values (:criado,:idpessoa)";
+            $ativoSim = 'S';
+
+            $sql = "insert into morador (criado, idpessoa, ativo) values (:criado,:idpessoa, :ativo)";
             $consulta = $pdo->prepare($sql);
             $consulta->bindParam(":idpessoa", $idpessoa);
+            $consulta->bindParam(":ativo", $ativoSim);
             $consulta->bindParam(":criado",$_SESSION['usuario']['login']);
         }
 

@@ -23,7 +23,7 @@
     }
 
     function teste($CPF){
-        $pesquisa = array(".","-");
+        $pesquisa = array(".","-","(",")");
         $atualiza = array("");
         $resultado = str_replace($pesquisa,$atualiza,$CPF);
 

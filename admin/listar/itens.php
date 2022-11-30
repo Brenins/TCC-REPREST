@@ -45,13 +45,10 @@
                             <td>R$ <?=$valor?></td>
                             <td><?=$dadosProdutos->categoria?></td>
                             <td>
-                                <a href="cadastros/produtos/<?=$dadosProdutos->id?>"
+                                <a href="cadastros/itens/<?=$dadosProdutos->id?>"
                                 class="btn btn-warning">
                                 <i class="fas fa-edit"></i>
                             </a>
-                            <a href="javascript:excluir(<?=$dadosProdutos->id?>)" class="btn btn-danger">
-                                    <i class="fas fa-trash"></i>
-                                </a>
                             </td>
                         </tr>
                         <?php

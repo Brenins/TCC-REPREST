@@ -2,8 +2,8 @@
     <div class="card-header">
         <h2 class="float-left">Lista de Moradores</h2>
         <div class="float-right">
-            <a href="cadastros/usuarios" title="Cadastrar Novo Usuário" class="btn btn-primary">
-                Cadastrar Usuário
+            <a href="cadastros/morador" title="Cadastrar Novo Morador" class="btn btn-primary">
+                Cadastrar Morador
             </a>
         </div>
     </div>
@@ -16,13 +16,14 @@
                     <td>Criado</td>
                     <td>Modificado</td>
                     <td>Ativo</td>
+                    <td>Opções</td>
                 </tr>
             </thead>
             <tbody>
                 <?php
                     
-                    $consulta = $pdo->prepare("select p.id as id, p.nome as morador, m.criado as criado, 
-                    m.modificado as modificado, m.ativo as ativo from morador m inner join pessoa p on m.idpessoa = p.id order by id;");
+                    $consulta = $pdo->prepare("select m.id as id, p.nome as morador, m.criado as criado, 
+                    m.modificado as modificado, m.ativo as ativo from morador m inner join pessoa p on m.idpessoa = p.id order by morador;");
 
                     $consulta->execute();
 
@@ -35,13 +36,14 @@
                                 <td><?=$dados->criado?></td>
                                 <td><?=$dados->modificado?></td>
                                 <td><?=$dados->ativo?></td>
-                                <!-- <td width="100px">
+                                <td class="text-center">
                                     <a href="cadastros/pessoas/<?=$dados->id?>" 
                                     title="Editar" class="btn btn-warning"><i class="fas fa-edit"></i>
                                     </a>
-                                     <a href="javascript:excluir(PASSAR O ID)" 
-                                    title="Excluir" class="btn btn-danger"><i class="fas fa-trash"></i></a>
-                                </td> -->
+                                    <a href="salvar/ativarMorador/<?=$dados->id?>" 
+                                    title="Ativar/Desativar" class="btn btn-primary"><i class="fas fa-power-off"></i>
+                                    </a>
+                                </td>
                             </tr>
                         <?php
                     }

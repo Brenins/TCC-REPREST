@@ -18,8 +18,19 @@
             </thead>
             <tbody>
                 <?php
-                    $consulta = $pdo->prepare("select a.ID as id, a.NUMEROAP as apartamento,  b.NOME as bloco, p.nome as morador from  apartamento a  
-                    join bloco b  on b.id = a.IDBLOCO join morador m  on m.ID = a.IDMORADOR join pessoa p  on p.ID = m.IDPESSOA");
+                    $consulta = $pdo->prepare("select
+                        a.id as id,
+                        a.numeroap as apartamento,
+                        b.nome as bloco,
+                        p.nome as morador
+                    from
+                        apartamento a
+                    join bloco b on
+                        a.idbloco = b.id
+                    left join morador m on
+                        a.idmorador = m.id
+                    left join pessoa p on
+                        m.idpessoa = p.id");
                     $consulta->execute();
                     while($dados = $consulta->fetch(PDO::FETCH_OBJ)){
                         ?>

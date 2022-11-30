@@ -15,10 +15,8 @@
         mensagemErro("Informe a disponibilicade do Item!!!");
     }
 
-
     $vlitem = str_replace(".","",$vlitem);
     $vlitem = str_replace(",",".",$vlitem);
-
 
     if(empty($id)){
         $sql = "insert into item (nome, ativo, vlitem, idcategoria) values (:nome, :ativo, :vlitem, :idcategoria)";
@@ -28,27 +26,22 @@
         $consulta->bindParam(":ativo", $ativo);
         $consulta->bindParam(":vlitem", $vlitem);
         $consulta->bindParam(":idcategoria", $categoria);
-    } /* else{
-        $sql = "update";
+    }else{
+        $sql = "update item set nome = :nome, ativo = :ativo, vlitem = :vlitem, idcategoria = :idcategoria where id = :id limit 1";
         $consulta = $pdo->prepare($sql);
-        $consulta->bindParam(":nome", $nome);
-        $consulta->bindParam(":categoria_id", $categoria_id);
-        $consulta->bindParam(":valor", $valor);
-        $consulta->bindParam(":descricao", $descricao);
-        $consulta->bindParam(":imagem1", $imagem1);
-        $consulta->bindParam(":imagem2", $imagem2);
         $consulta->bindParam(":id", $id);
-    } */
-
+        $consulta->bindParam(":nome", $nome);
+        $consulta->bindParam(":ativo", $ativo);
+        $consulta->bindParam(":vlitem", $vlitem);
+        $consulta->bindParam(":idcategoria", $categoria);
+    }
 
     if($consulta->execute()){
-        mensagemSucesso('paginas/home');
+        mensagemSucesso('listar/itens');
 
     }else{
         mensagemErro("Erro ao salvar os dados");
     }
-
-
 
 ?>
 

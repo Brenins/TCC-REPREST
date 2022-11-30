@@ -10,10 +10,10 @@
     <div class="card-body">
         <ul class="nav nav-pills w-auto p-3">
             <li class="nav-item m-3">
-                <a class="nav-link active" href="cadastros/pessoas"><i class="fas fa-handshake"></i> Nova Empréstimo</a>
+                <a class="nav-link active" href="cadastros/emprestimos"><i class="fas fa-handshake"></i> Nova Empréstimo</a>
             </li>
             <li class="nav-item m-3">
-                <a class="nav-link active" href="cadastros/pessoas"><i class="fas fa-list-alt"></i> Lista de Empréstimos</a>
+                <a class="nav-link active" href="listar/emprestimos"><i class="fas fa-list-alt"></i> Lista de Empréstimos</a>
             </li>
         </ul>
     </div>

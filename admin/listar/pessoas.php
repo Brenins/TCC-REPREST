@@ -45,9 +45,9 @@
                                 <td width="30px"><?=$dados->id?></td>
                                 <td><?=$dados->nome?></td>
                                 <td data-inputmask="'mask': '999.999.999-99'"><?=$dados->cpf?></td>
-                                <td><?=$dados->rg?></td>
+                                <td ><?=$dados->rg?></td>
                                 <td><?=$testeData?></td>
-                                <td><?=$dados->telefone?></td>
+                                <td data-inputmask="'mask': '(99)99999-9999'"><?=$dados->telefone?></td>
                                 <td><?=$dados->criado?></td>
                                 <td><?=$dados->modificado?></td>
                                 <td width="90px">
