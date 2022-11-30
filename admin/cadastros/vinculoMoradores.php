@@ -27,6 +27,11 @@
         </div>
     </div>
     <div class="card-body">
+        <?php
+            if(empty($id)){
+                echo "<div class='alert alert-warning' role='alert'> Abaixo estão listados apenas os moradores que não estão vinculados a um apartamento e os apartamentos que estão vazios.</div> ";
+            }
+        ?>
         <form name="formCadastro" method="post" action="salvar/vinculoMoradores" data-parsley-validate="">
             <input type="hidden" readonly name="id" id="id"
             class="form-control" value="<?=$id?>">

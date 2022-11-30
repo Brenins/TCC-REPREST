@@ -26,6 +26,21 @@
             mensagemErro("CPF registrado no sistema, por favor insira outro CPF.");
         }
 
+
+        $sql ="select id from pessoa where rg = :rg AND id <> :id limit 1";
+
+        $consulta = $pdo->prepare($sql);
+        $consulta->bindParam(":rg", $rg);
+        $consulta->bindParam(":id", $id);
+        $consulta->execute();
+        
+        $dados = $consulta->fetch(PDO::FETCH_OBJ);
+
+        if(!empty($dados->id)){
+            mensagemErro("CPF registrado no sistema, por favor insira outro CPF.");
+        }
+
+
         function validaCPF($cpf) {
  
             // Extrai somente os números

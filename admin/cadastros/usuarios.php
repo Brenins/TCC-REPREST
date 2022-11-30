@@ -24,7 +24,7 @@
     <div class="card-body">
         <?php
             if(empty($id)){
-                echo "<div class='alert alert-warning' role='alert'> Abaixo estão listados apenas os que não estão definidos como moradores.</div> ";
+                echo "<div class='alert alert-warning' role='alert'> Abaixo estão listados apenas os funcionarios que não possuem um usuário cadastrado.</div> ";
             }
         ?>
         
@@ -45,7 +45,6 @@
                             $dados = $consulta->fetch(PDO::FETCH_OBJ);
                             $id = $dados->id;
                             $login = $dados->login;
-                            $ativo = $dados->ativo;
                             $criado = $dados->criado;
                             $fnome = $dados->nome;
 
@@ -80,13 +79,6 @@
             <input type="password" name="senha2" id="senha2" class="form-control" required 
             data-parsley-required-message="Digite a sua senha" autocomplete="off">
 
-            <label for="ativo">Ativo:</label>
-            <select name="ativo" id="ativo" class="form-control" 
-                required data-parsley-required-message="Selecione uma Opcao">
-                    <option value=""></option>
-                    <option value="S">Sim</option>
-                    <option value="N">Nao</option>
-            </select>
             <br>
             <button type="submit" class="btn btn-success">
                 <i class="fas fa-check"></i> Salvar

@@ -29,13 +29,20 @@
 
                     while($dados = $consulta->fetch(PDO::FETCH_OBJ)
                     ) {
+
+                        if($dados->ativo == "N"){
+                            $ativo = "Não";
+                        }else{
+                            $ativo = "Sim";
+                        }
+
                         ?>
                             <tr>
                                 <td width="70px"><?=$dados->id?></td>
                                 <td><?=$dados->morador?></td>
                                 <td><?=$dados->criado?></td>
                                 <td><?=$dados->modificado?></td>
-                                <td><?=$dados->ativo?></td>
+                                <td><?=$ativo?></td>
                                 <td class="text-center">
                                     <a href="cadastros/pessoas/<?=$dados->id?>" 
                                     title="Editar" class="btn btn-warning"><i class="fas fa-edit"></i>

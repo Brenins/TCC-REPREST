@@ -7,9 +7,6 @@
         <h2 class="float-left">Gestão do Edifício</h2>
     </div>
     <div class="card-body">
-        <div class="alert alert-primary" role="alert">
-            Nesta tela você poderá gerenciar toda a parte de setorização do edifício e vínculo de moradores.
-        </div>
         <ul class="nav nav-pills w-auto p-3 ">
             <li class="nav-item dropdown m-3">
                 <a class="nav-link active dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="bi bi-building"></i> Cadastramento de Setores</a>

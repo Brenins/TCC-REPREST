@@ -18,8 +18,8 @@
                     <td>Login</td>
                     <td>Funcionário</td>
                     <td>Ativo</td>
-                    <td>Criado Por</td>
-                    <td>Modificado Por</td>
+                    <td>Criado</td>
+                    <td>Modificado</td>
                     <td>Opções</td>
                 </tr>
             </thead>
@@ -36,10 +36,10 @@
                             <td width="15px"><?=$dados->ativo?></td>
                             <td width="120px"><?=$dados->criado?></td>
                             <td width="120px"><?=$dados->modificado?></td>
-                            <td width="200px">
-                            <a href="cadastros/usuarios/<?=$dados->id?>" 
-                            title="Editar" class="btn btn-warning"><i class="fas fa-edit"></i>Editar</a>
-                            <a href="cadastros/habilitar/<?=$dados->id?>"class="btn btn-danger"><i class="fas fa-toggle-on"></i>Ativar</a>
+                            <td width="100px" class="text-center">
+                                <a href="cadastros/usuarios/<?=$dados->id?>" 
+                                title="Editar" class="btn btn-warning"><i class="fas fa-edit"></i>Editar</a>
+
                             </td>
                         </tr>
                         <?php
