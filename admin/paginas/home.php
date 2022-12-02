@@ -1,4 +1,4 @@
-<!-- <div class="card shadow-lg">
+<div class="card shadow-lg">
     <div class="card-header">
         <h1 class="text-center">Dashboard</h1>
     </div>
@@ -87,4 +87,4 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>

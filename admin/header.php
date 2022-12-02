@@ -6,9 +6,9 @@
 <ul class="navbar-nav sidebar sidebar-dark accordion" style="background-color: #256D85" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="./paginas/home">
+    <a class="sidebar-brand bg-white d-flex align-items-center justify-content-center" href="./paginas/home">
             
-        <img src="images/logo.png" alt="Vitrine Logo" style="width: 100%">
+        <img src="images/logo2.png" alt="Vitrine Logo" style="width: 100%">
 
     </a>
 
@@ -16,11 +16,11 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <!-- <li class="nav-item active">
+    <li class="nav-item active">
         <a class="nav-link" href="./paginas/home">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
-    </li> -->
+    </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -34,9 +34,27 @@
     </a>
         <div id="collapseTree" class="collapse" aria-labelledby="headingTree" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="cadastros/GestaoReservas"><i class="fas fa-calendar-plus"></i> Gestão de Reservas</a>
-                <a class="collapse-item" href="cadastros/GestaoEmprestimos"><i class="fas fa-hands-helping"></i></i> Gestão de Empréstimos</a>
-            </div>
+                
+                <div class="dropdown dropright">
+                        <a class="collapse-item" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-calendar-plus"></i> Gestão de Reservas
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Nova Reserva</a>
+                            <a class="dropdown-item" href="#">Lista de Reservas</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown dropright">
+                        <a class="collapse-item" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-hands-helping"></i></i> Gestão de Empréstimos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Nova Empréstimo</a>
+                            <a class="dropdown-item" href="#">Lista de Empréstimos</a>
+                        </div>
+                    </div>
+                </div>
+            
         </div>
     </li>
     <hr class="sidebar-divider">
@@ -49,10 +67,27 @@
         <span>Gestão</span>
     </a>
     <div id="collapseGestao" class="collapse" aria-labelledby="headingGestao" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="cadastros/GestaoPessoas"><i class="fas fa-users"></i> Pessoas</a>
-                <a class="collapse-item" href="cadastros/GestaoPredial"><i class="fas fa-building"></i> Edificio</a>
-            </div>
+             <div class="bg-white py-2 collapse-inner rounded">
+                
+                <div class="dropdown dropright">
+                        <a class="collapse-item" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-calendar-plus"></i> Gestão de Reservas
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Nova Reserva</a>
+                            <a class="dropdown-item" href="#">Lista de Reservas</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown dropright">
+                        <a class="collapse-item" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-hands-helping"></i></i> Gestão de Empréstimos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Nova Empréstimo</a>
+                            <a class="dropdown-item" href="#">Lista de Empréstimos</a>
+                        </div>
+                    </div>
+                </div>
         </div>
     </li>
 
@@ -119,7 +154,7 @@
     <div id="content">
 
         <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <nav class="navbar navbar-expand navbar bg-white topbar mb-4 static-top shadow" >
 
             <!-- Sidebar Toggle (Topbar) -->
             
