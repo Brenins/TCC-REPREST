@@ -49,8 +49,8 @@
                         <i class="fas fa-hands-helping"></i></i> Gestão de Empréstimos
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Nova Empréstimo</a>
-                            <a class="dropdown-item" href="#">Lista de Empréstimos</a>
+                            <a class="dropdown-item" href="cadastros/emprestimos">Nova Empréstimo</a>
+                            <a class="dropdown-item" href="listar/emprestimos">Lista de Empréstimos</a>
                         </div>
                     </div>
                 </div>
@@ -97,7 +97,7 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseItens"
             aria-expanded="true" aria-controls="collapseItens">
             <i class="fas fa-tools"></i>
-            <span>Galpão</span>
+            <span>Itens</span>
         </a>
         <div id="collapseItens" class="collapse" aria-labelledby="headingItens" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
