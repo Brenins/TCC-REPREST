@@ -8,7 +8,6 @@
         $consulta->execute();
         $dados = $consulta->fetch(PDO::FETCH_OBJ);
 
-
         if($dados->ativo == "N"){
             $sql = "update item set ativo = 'S' where id = :id limit 1";
             $aaa = $pdo->prepare($sql);
@@ -24,10 +23,8 @@
             mensagemSucesso('listar/itens');
         }
 
-
     }else{
         mensagemErro("Requisição Inválida");
     }
-
 
 ?>

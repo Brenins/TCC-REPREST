@@ -15,6 +15,19 @@
         </div>
     </div>
     <div class="card-body">
+        <p>
+            <a class="btn btn-info" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Legenda de Opções
+            </a>
+        </p>
+        <div class="collapse" id="collapseExample">
+            <div class="alert alert-info">
+                <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button> Edita as informações sobre os items.
+                <hr>
+                <button type="button" class="btn btn-secondary"><i class="fas fa-toggle-off"></i></button> <button type="button" class="btn btn-success"><i class="fas fa-toggle-on"></i></button> Ativa e desativa o item
+            </div>
+        </div>
+
         <table class="table table-bordered table-hover table-striped">
             <thead>
                 <tr>
