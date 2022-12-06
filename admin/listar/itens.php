@@ -1,6 +1,6 @@
 <?php 
     if ( !isset ( $page ) ) exit;
-    $disponivel = null;
+    $disponivel = $cor = null;
 ?>
 
 
@@ -39,10 +39,13 @@
 
                         if($dadosProdutos->disponivel == "N"){
                             $disponivel = "Não";
-                        }else{
+                            $cor = 'secondary';
+                            $switch = 'fa-toggle-off';
+                        }elseif($dadosProdutos->disponivel == "S"){
                             $disponivel = "Sim";
+                            $cor = 'success';
+                            $switch = 'fa-toggle-on';
                         }
-
                         ?>
                         <tr>
                             <td><?=$dadosProdutos->id?></td>
@@ -54,9 +57,10 @@
                                 <a href="cadastros/itens/<?=$dadosProdutos->id?>"
                                 class="btn btn-warning" title="Editar Item">
                                 <i class="fas fa-edit"></i></a>
-                                <a href="cadastros/itens/<?=$dadosProdutos->id?>"
-                                class="btn btn-danger">
-                                <i class="fas fa-magic" title="Extraviado/Danificado"></i>
+
+                                <a href="salvar/disponibilidadeItem/<?=$dadosProdutos->id?>"
+                                class="btn btn-<?=$cor?>">
+                                <i class="fas <?=$switch?>" title="Ativar/Desativar"></i>
                                  </a>
                             </td>
                         </tr>
