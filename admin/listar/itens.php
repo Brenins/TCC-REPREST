@@ -3,7 +3,6 @@
     $disponivel = $cor = null;
 ?>
 
-
 <div class="card shadow-lg">
     <div class="card-header">
         <h2 class="float-left">Lista de Itens</h2>
@@ -17,14 +16,17 @@
     <div class="card-body">
         <p>
             <a class="btn btn-info" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                Legenda de Opções
+                Ajuda <i class="fas fa-question-circle"></i>
             </a>
         </p>
         <div class="collapse" id="collapseExample">
-            <div class="alert alert-info">
-                <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button> Edita as informações sobre os items.
+            <div class="alert alert-info shadow">
+                <button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button> <b>Edita as informações sobre os items.</b>  
                 <hr>
-                <button type="button" class="btn btn-secondary"><i class="fas fa-toggle-off"></i></button> <button type="button" class="btn btn-success"><i class="fas fa-toggle-on"></i></button> Ativa e desativa o item
+                <button type="button" class="btn btn-secondary"><i class="fas fa-toggle-off"></i></button> <button type="button" class="btn btn-success"><i class="fas fa-toggle-on"></i></button> 
+                    <b>
+                        Ativa e desativa o item
+                    </b>
             </div>
         </div>
 

@@ -31,6 +31,15 @@
     <script src="js/lightbox-plus-jquery.min.js"></script>
 
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    
+    
+    
+    
+    
+    
+    <!-- JavaScript Bundle with Popper -->
+    
 
     <script type="text/javascript" src="vendor/summernote/summernote.min.js"></script>
     <script type="text/javascript" src="vendor/summernote/summernote-bs4.min.js"></script>
