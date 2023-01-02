@@ -67,24 +67,26 @@
         <span>Gestão</span>
     </a>
     <div id="collapseGestao" class="collapse" aria-labelledby="headingGestao" data-parent="#accordionSidebar">
-             <div class="bg-white py-2 collapse-inner rounded">
+            <div class="bg-white py-2 collapse-inner rounded">
                 
                 <div class="dropdown dropright">
-                        <a class="collapse-item" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-calendar-plus"></i> Gestão de Reservas
+                        <a class="collapse-item" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-calendar-plus"></i> Pessoas
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Nova Reserva</a>
-                            <a class="dropdown-item" href="#">Lista de Reservas</a>
+                            <a class="dropdown-item" href="cadastros/pessoas">Nova Pessoa</a>
+                            <a class="dropdown-item" href="listar/pessoas">Lista de Pessoas</a>
                         </div>
                     </div>
 
                     <div class="dropdown dropright">
                         <a class="collapse-item" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-hands-helping"></i></i> Gestão de Empréstimos
+                        <i class="fas fa-hands-helping"></i></i> Funcionário
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Nova Empréstimo</a>
-                            <a class="dropdown-item" href="#">Lista de Empréstimos</a>
+                            <a class="dropdown-item" href="cadastros/funcionario">Novo Funcionário</a>
+                            <a class="dropdown-item" href="#">Cadastro de funções</a>
+                            <a class="dropdown-item" href="#">Definir Login para funcionário</a>
+                            <a class="dropdown-item" href="#">Lista de Funcionários</a>
                         </div>
                     </div>
                 </div>

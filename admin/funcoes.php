@@ -24,7 +24,7 @@
         return  $novo = "$pedacos[2]/$pedacos[1]/$pedacos[0]";
     }
 
-    function teste($CPF){
+    function formataCPF($CPF){
         $pesquisa = array(".","-","(",")");
         $atualiza = array("");
         $resultado = str_replace($pesquisa,$atualiza,$CPF);
