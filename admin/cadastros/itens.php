@@ -44,8 +44,6 @@
             <input type="text" name="nome" id="nome" 
             required data-parsley-required-message="Por favor preencha este campo" 
             class="form-control" value="<?=@$nome?>">
-            <br>
-            
             <label for="categoria">Selecione a Categoria:</label>
             <select name="categoria" id="categoria" required data-parsley-required-message="Selecione uma categoria." 
             class="form-control">
@@ -64,8 +62,6 @@
                     }
                 ?>
             </select>
-            <br>
-            
             <label for="valor">Valor do Item:</label>
             <input type="text" name="valor" id="valor" onkeypress="$(this).mask('#.##0,00', {reverse: true});"
             required data-parsley-required-message="Preencha o valor" class="form-control valor"

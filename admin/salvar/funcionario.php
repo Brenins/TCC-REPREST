@@ -38,7 +38,7 @@
         if ( empty ( $id ) ) {
             
             //inserir no banco
-
+            $ativo = 'S';
             $sql = "insert into funcionario (ativo, idpessoa,idfuncao, criado) values (:ativo,:idpessoa, :idfuncao, :criado)";
             $consulta = $pdo->prepare($sql);
             $consulta->bindParam(":ativo", $ativo);
@@ -74,7 +74,7 @@
         } */
 
         if($consulta->execute()){
-            mensagemSucesso("listar/usuarios");
+            mensagemSucesso("listar/funcionarios");
         }
     }
 ?>

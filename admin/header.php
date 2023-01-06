@@ -84,9 +84,9 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <a class="dropdown-item" href="cadastros/funcionario">Novo Funcionário</a>
-                            <a class="dropdown-item" href="#">Cadastro de funções</a>
+                            <a class="dropdown-item" href="cadastros/funcao">Cadastro de funções</a>
                             <a class="dropdown-item" href="#">Definir Login para funcionário</a>
-                            <a class="dropdown-item" href="#">Lista de Funcionários</a>
+                            <a class="dropdown-item" href="listar/funcionarios">Lista de Funcionários</a>
                         </div>
                     </div>
                 </div>

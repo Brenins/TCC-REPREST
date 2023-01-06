@@ -23,21 +23,13 @@
         $modificado = $dados->modificado ?? NULL;
     }
 ?>
-<div class="card">
+<div class="card shadow">
     <div class="card-header">
         <h2 class="float-left">Cadastro de Funcionário</h2>
         <div class="float-right">
-            <ul class="nav nav-pills">
-                <li class="nav-item dropdown">
-                    <a class="nav-link active dropdown" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="fas fa-bars"></i>  Menu</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="cadastros/funcionario">Cadastrar Funcionário</a>
-                        <a class="dropdown-item" href="listar/funcionarios">Lista de Funcionários</a>
-                        <a class="dropdown-item" href="cadastros/funcao">Cadastro de Função</a>
-                        <a class="dropdown-item" href="cadastros/usuarios">Definir Login de Funcionário</a>
-                    </div>
-                </li>
-            </ul>
+            <a href="listar/funcionarios" 
+            title="Listar Funcionarios" 
+            class="btn btn-primary">Listar Funcionários</a>
         </div>
     </div>
     <div class="card-body">
@@ -45,7 +37,7 @@
             <input type="hidden" readonly name="id" id="id" class="form-control" value="<?=$id?>">
 
             <div class="alert alert-warning" role="alert">
-                Abaixo estão listadas apenas as pessoas que não estão definidas como funcionários.
+                Abaixo serão listados apenas os nomes das pessoas que não estão registradas como funcionários, caso não encontre o nome desejado, verifique se o mesmo está cadastrado no sistema acessando a tela de <a class="alert-link" href="">Lista de Pessoas</a>.
             </div>
 
             <label for="idpessoa">Selecione uma pessoa para cadastrar como Funcionário:</label>
@@ -53,7 +45,8 @@
                 class="form-control">
                     <option value=""></option>
                     <?php
-                        $sql= "select id, nome from pessoa order by nome";
+
+                        $sql= "select p.id, p.nome  from pessoa p left join funcionario f on p.id = f.idpessoa where f.idpessoa is null ";
                         $consultaPessoa = $pdo->prepare($sql);
                         $consultaPessoa->execute();
 
@@ -86,15 +79,6 @@
                         }
                     ?>
                 >
-            </select>
-
-
-            <label for="ativo">Ativo:</label>
-            <select name="ativo" id="ativo" class="form-control" 
-            required data-parsley-required-message="Selecione uma Opcao">
-                <option value=""></option>
-                <option value="S">Sim</option>
-                <option value="N">Nao</option>
             </select>
             <br>
             <button type="submit" class="btn btn-success">

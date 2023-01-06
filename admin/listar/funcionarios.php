@@ -5,16 +5,9 @@
     <div class="card-header">
         <h2 class="float-left">Lista de Funcionários</h2>
         <div class="float-right">
-            <ul class="nav nav-pills">
-                <li class="nav-item dropdown">
-                    <a class="nav-link active dropdown" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="fas fa-bars"></i>  Menu</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="cadastros/funcionario">Cadastrar Funcionário</a>
-                        <a class="dropdown-item" href="cadastros/funcao">Cadastro de Função</a>
-                        <a class="dropdown-item" href="cadastros/usuarios">Definir Login de Funcionário</a>
-                    </div>
-                </li>
-            </ul>
+            <a href="cadastros/funcionario" 
+            title="Cadastrar Funcionário" 
+            class="btn btn-primary">Cadastrar Funcionário</a>
         </div>
     </div>
     <div class="card-body">
@@ -42,8 +35,12 @@
                     ){
                         if($dados->ativo == "N"){
                             $ativo = "Não";
+                            $cor ="danger";
+                            $botao = "fa fa-toggle-off";
                         }else{
                             $ativo = "Sim";
+                            $cor = "success";
+                            $botao = "fa fa-toggle-on";
                         }
                         ?>
                         <tr>
@@ -55,7 +52,7 @@
                             <td><?=$dados->modificado?></td>
                             <td class="text-center">
                                 <a href="salvar/ativarFuncionario/<?=$dados->id?>" 
-                                    title="Ativar/Desativar" class="btn btn-primary"><i class="fas fa-power-off"></i>
+                                    title="Ativar/Desativar" class="btn btn-<?=$cor?>"><i class="<?=$botao?>"></i>
                                </a>
                             </td>
                         </tr>
@@ -70,7 +67,20 @@
 <script>
     $(".table").dataTable({
         language: {
-            url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/pt-BR.json',
+            "emptyTable": "Nenhum registro encontrado",
+            "info": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+            "infoFiltered": "(Filtrados de _MAX_ registros)",
+            "loadingRecords": "Carregando...",
+            "zeroRecords": "Nenhum registro encontrado",
+            "search": "Pesquisar",
+            "paginate": {
+                "next": "Próximo",
+                "previous": "Anterior",
+                "first": "Primeiro",
+                "last": "Último"
+            },
+            "lengthMenu": "Exibir _MENU_ resultados por página",
+            "infoEmpty": "Mostrando 0 até 0 de 0 registro(s)",
         },
     });
 </script>
