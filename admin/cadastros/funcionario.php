@@ -8,20 +8,7 @@
     $login = $senha = $ativo = NULL;
 
 
-    if(!empty($id)){
-        $sql = "select id, login, senha, ativo, idpessoa, criado, modificado from funcionario where  id = :id limit 1";
-        $consulta = $pdo->prepare($sql);
-        $consulta->bindParam(":id",$id);
-        $consulta->execute();
 
-        $dados = $consulta->fetch(PDO::FETCH_OBJ);
-        $id = $dados->id ?? NULL;
-        $login = $dados->login ?? NULL;
-        $ativo = $dados->ativo ?? NULL;
-        $idpessoa = $dados->idpessoa ?? NULL;
-        $criado = $dados->criado ?? NUll;
-        $modificado = $dados->modificado ?? NULL;
-    }
 ?>
 <div class="card shadow">
     <div class="card-header">
@@ -45,17 +32,24 @@
                 class="form-control">
                     <option value=""></option>
                     <?php
-
-                        $sql= "select p.id, p.nome  from pessoa p left join funcionario f on p.id = f.idpessoa where f.idpessoa is null ";
-                        $consultaPessoa = $pdo->prepare($sql);
-                        $consultaPessoa->execute();
+                        if(empty($id)){
+                            $sql= "select p.id, p.nome  from pessoa p left join funcionario f on p.id = f.idpessoa where f.idpessoa is null ";
+                            $consultaPessoa = $pdo->prepare($sql);
+                            $consultaPessoa->execute();
+                        }else{
+                            $sql= "select p.id, p.nome  from pessoa p left join funcionario f on p.id = f.idpessoa where f.id = :id ";
+                            $consultaPessoa = $pdo->prepare($sql);
+                            $consultaPessoa->bindParam(":id", $id);
+                            $consultaPessoa->execute();
+                            
+                        }
 
                         while ($dadosPessoa = $consultaPessoa->fetch(PDO::FETCH_OBJ)){
                             //Separar dados
-                            $id = $dadosPessoa->id;
+                            $idp = $dadosPessoa->id;
                             $nome = $dadosPessoa->nome;
 
-                            echo "<option value='{$id}'>{$nome}</option>";
+                            echo "<option value='{$idp}'>{$nome}</option>";
                         }
                     ?>
                 >
@@ -73,9 +67,9 @@
 
                         while ($dadosFuncao = $consultaFuncao->fetch(PDO::FETCH_OBJ)){
                             //Separar dados
-                            $id = $dadosFuncao->id;
+                            $idf = $dadosFuncao->id;
                             $nome = $dadosFuncao->nome;
-                            echo "<option value='{$id}'>{$nome}</option>";
+                            echo "<option value='{$idf}'>{$nome}</option>";
                         }
                     ?>
                 >
@@ -89,4 +83,6 @@
 </div>
 <script>
     $("#ativo").val("<?=$ativo?>");
+    $("#idpessoa").val("<?=$idp?>");
+    $("#idfuncao").val("<?=$idf?>");
 </script>

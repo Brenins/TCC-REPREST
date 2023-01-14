@@ -19,21 +19,9 @@
 
 ?>
 
-<div class="card">
+<div class="card shadow">
     <div class="card-header">
         <h2 class="float-left">Cadastro de Função</h2>
-        <div class="float-right">
-            <ul class="nav nav-pills">
-                <li class="nav-item dropdown">
-                    <a class="nav-link active dropdown" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="fas fa-bars"></i>  Menu</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="cadastros/funcionario">Cadastrar Funcionário</a>
-                        <a class="dropdown-item" href="listar/funcionarios">Lista de Funcionários</a>
-                        <a class="dropdown-item" href="cadastros/usuarios">Definir Login de Funcionário</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
     </div>
     <div class="card-body">
         <form name="formCadastro" method="post" action="salvar/funcao" data-parsley-valdiate="">
@@ -86,3 +74,24 @@
         </table>
     </div>
 </div>
+<script>
+    $(".table").dataTable({
+        language: {
+            "emptyTable": "Nenhum registro encontrado",
+            "info": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+            "infoFiltered": "(Filtrados de _MAX_ registros)",
+            "loadingRecords": "Carregando...",
+            "zeroRecords": "Nenhum registro encontrado",
+            "search": "Pesquisar",
+            "paginate": {
+                "next": "Próximo",
+                "previous": "Anterior",
+                "first": "Primeiro",
+                "last": "Último"
+            },
+            "lengthMenu": "Exibir _MENU_ resultados por página",
+            "infoEmpty": "Mostrando 0 até 0 de 0 registro(s)",
+        },
+        
+    });
+</script>

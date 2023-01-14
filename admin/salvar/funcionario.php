@@ -35,9 +35,17 @@
 
         }
         
-        if ( empty ( $id ) ) {
+        if (!empty($id)){
+            $sql = "update funcionario set idfuncao = :idfuncao, modificado = :modificado  where id = :id limit 1";
+            $consulta = $pdo->prepare($sql);
+            $consulta->bindParam(":id", $id);
+            $consulta->bindParam(":idfuncao", $idfuncao);
+            $consulta->bindParam(":modificado",$_SESSION['usuario']['login']);
+        
             
+        }else{
             //inserir no banco
+            
             $ativo = 'S';
             $sql = "insert into funcionario (ativo, idpessoa,idfuncao, criado) values (:ativo,:idpessoa, :idfuncao, :criado)";
             $consulta = $pdo->prepare($sql);
@@ -45,8 +53,21 @@
             $consulta->bindParam(":idpessoa", $idpessoa);
             $consulta->bindParam(":idfuncao", $idfuncao);
             $consulta->bindParam(":criado",$_SESSION['usuario']['login']);
-
-        }/* } else if ( empty ($senha ) ) {
+        
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /* } else if ( empty ($senha ) ) {
 
             //fazer o update, mas sem a senha
 

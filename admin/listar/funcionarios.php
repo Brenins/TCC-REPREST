@@ -11,12 +11,12 @@
         </div>
     </div>
     <div class="card-body">
-
         <table class="table table-hover table-bordered table-striped">
             <thead>
                 <tr>
                     <td>ID</td>
                     <td>Nome do Funcionário</td>
+                    <td>Login</td>
                     <td>Funcao</td>
                     <td>Ativo</td>
                     <td>Criado</td>
@@ -26,13 +26,15 @@
             </thead>
             <tbody>
                 <?php
-                    $consulta = $pdo->prepare("select f.id as id, p.nome as nome, fc.nome as funcao, f.ativo as ativo, f.criado as criado, f.modificado as modificado from pessoa p 
+                    $consulta = $pdo->prepare("select f.id as id, p.nome as nome, f.login as login, fc.nome as funcao, f.ativo as ativo, f.criado as criado, f.modificado as modificado from pessoa p 
                     join funcionario f on p.id = f.idpessoa join funcao fc on f.idfuncao = fc.id");
                     
                     $consulta->execute();
 
                     while($dados = $consulta->fetch(PDO::FETCH_OBJ)
                     ){
+
+
                         if($dados->ativo == "N"){
                             $ativo = "Não";
                             $cor ="danger";
@@ -44,8 +46,9 @@
                         }
                         ?>
                         <tr>
-                            <td><?=$dados->id?></td>
+                            <td width="30px"><?=$dados->id?></td>
                             <td><?=$dados->nome?></td>
+                            <td><?=$dados->login?></td>
                             <td><?=$dados->funcao?></td>
                             <td><?=$ativo?></td>
                             <td><?=$dados->criado?></td>
@@ -54,11 +57,13 @@
                                 <a href="salvar/ativarFuncionario/<?=$dados->id?>" 
                                     title="Ativar/Desativar" class="btn btn-<?=$cor?>"><i class="<?=$botao?>"></i>
                                </a>
+                                <a href="cadastros/funcionario/<?=$dados->id?>" 
+                                    title="Alterar Cargo" class="btn btn-warning"><i class="fas fa-user-edit"></i>
+                               </a>
                             </td>
                         </tr>
                         <?php
                     }
-
                 ?>
             </tbody>
         </table>
