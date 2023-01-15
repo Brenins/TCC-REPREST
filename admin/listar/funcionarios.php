@@ -57,9 +57,12 @@
                                 <a href="salvar/ativarFuncionario/<?=$dados->id?>" 
                                     title="Ativar/Desativar" class="btn btn-<?=$cor?>"><i class="<?=$botao?>"></i>
                                </a>
-                                <a href="cadastros/funcionario/<?=$dados->id?>" 
-                                    title="Alterar Cargo" class="btn btn-warning"><i class="fas fa-user-edit"></i>
-                               </a>
+                               <a href="cadastros/funcionario/<?=$dados->id?>" 
+                                   title="Alterar Cargo" class="btn btn-warning"><i class="fas fa-user-edit"></i>
+                              </a>
+                               <a href="cadastros/usuarios/<?=$dados->id?>" 
+                                   title="Alterar Informações de Login" class="btn btn-primary"><i class="fas fa-user-lock"></i>
+                              </a>
                             </td>
                         </tr>
                         <?php

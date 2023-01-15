@@ -37,7 +37,7 @@
                             $consultaPessoa = $pdo->prepare($sql);
                             $consultaPessoa->execute();
                         }else{
-                            $sql= "select p.id, p.nome  from pessoa p left join funcionario f on p.id = f.idpessoa where f.id = :id ";
+                            $sql= "select p.id, p.nome, f.idfuncao as idf from pessoa p left join funcionario f on p.id = f.idpessoa where f.id = :id ";
                             $consultaPessoa = $pdo->prepare($sql);
                             $consultaPessoa->bindParam(":id", $id);
                             $consultaPessoa->execute();
@@ -48,6 +48,7 @@
                             //Separar dados
                             $idp = $dadosPessoa->id;
                             $nome = $dadosPessoa->nome;
+                            $idfuncao = $dadosPessoa->idf;
 
                             echo "<option value='{$idp}'>{$nome}</option>";
                         }
@@ -67,9 +68,9 @@
 
                         while ($dadosFuncao = $consultaFuncao->fetch(PDO::FETCH_OBJ)){
                             //Separar dados
-                            $idf = $dadosFuncao->id;
+                            $id = $dadosFuncao->id;
                             $nome = $dadosFuncao->nome;
-                            echo "<option value='{$idf}'>{$nome}</option>";
+                            echo "<option value='{$id}'>{$nome}</option>";
                         }
                     ?>
                 >
@@ -82,7 +83,6 @@
     </div>
 </div>
 <script>
-    $("#ativo").val("<?=$ativo?>");
     $("#idpessoa").val("<?=$idp?>");
-    $("#idfuncao").val("<?=$idf?>");
+    $("#idfuncao").val("<?=$idfuncao?>");
 </script>

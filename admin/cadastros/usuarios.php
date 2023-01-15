@@ -11,7 +11,8 @@
     <div class="card-body">
         <?php
             if(empty($id)){
-                echo "<div class='alert alert-warning' role='alert'> Abaixo estão listados apenas os funcionarios que não possuem um usuário cadastrado.</div> ";
+                echo "<div class='alert alert-warning' role='alert'> 
+                Abaixo estão listados apenas os funcionários que não possuem um usuário cadastrado, para alterar informações de login, acesse <a class='alert-link' href='listar/funcionarios'>Lista de Funcionários.</a></div>";
             }
         ?>
         

@@ -60,9 +60,6 @@
                                 <td width="70px"><?=$dados->id?></td>
                                 <td><?=$dados->nome?></td>
                                 <td width="200px"class="text-center">
-                                    <a href="cadastros/funcao/<?=$dados->id?>" 
-                                    title="Editar" class="btn btn-warning"><i class="fas fa-edit"></i>
-                                    </a>
                                     <a href="javascript:excluir(<?=$dados->id?>)" 
                                     title="Excluir" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                                 </td>
@@ -94,4 +91,17 @@
         },
         
     });
+    function excluir(id){
+        Swal.fire({
+            icon: 'warning',
+            title: 'Voce deseja realmente excluir este item?',
+            showCancelButton: true,
+            confirmButtonText: 'Excluir',
+            cancelButtonText: 'Cancelar',
+        }).then((result) => {
+        if (result.isConfirmed){
+            location.href='excluir/categorias/'+id;
+        }
+        })
+    }
 </script>
