@@ -100,7 +100,7 @@
             cancelButtonText: 'Cancelar',
         }).then((result) => {
         if (result.isConfirmed){
-            location.href='excluir/categorias/'+id;
+            location.href='excluir/funcao/'+id;
         }
         })
     }

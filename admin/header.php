@@ -80,13 +80,31 @@
 
                     <div class="dropdown dropright">
                         <a class="collapse-item" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-hands-helping"></i></i> Funcionário
+                        <i class="fas fa-hands-helping"></i></i> Funcionários
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <a class="dropdown-item" href="cadastros/funcionario">Novo Funcionário</a>
                             <a class="dropdown-item" href="cadastros/funcao">Cadastro de funções</a>
                             <a class="dropdown-item" href="cadastros/usuarios">Definir Login para funcionário</a>
                             <a class="dropdown-item" href="listar/funcionarios">Lista de Funcionários</a>
+                        </div>
+                    </div>
+                    <div class="dropdown dropright">
+                        <a class="collapse-item" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-house-user"></i> Moradores
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="cadastros/morador">Novo Morador</a>
+                            <a class="dropdown-item" href="listar/moradores">Lista de Moradores</a>
+                        </div>
+                    </div>
+                    <div class="dropdown dropright">
+                        <a class="collapse-item" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-building"></i> Eifício
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="cadastros/funcionario">Novo Morador</a>
+                            <a class="dropdown-item" href="cadastros/funcao">Lista de Moradores</a>
                         </div>
                     </div>
                 </div>
