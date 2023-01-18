@@ -36,20 +36,23 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 
                 <div class="dropdown dropright">
-                        <a class="collapse-item" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-calendar-plus"></i> Gestão de Reservas
+                        <a class="collapse-item" href="#" role="button" 
+                        id="dropdownMenuLink" data-toggle="dropdown" 
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-calendar-plus"></i> Reservas
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Nova Reserva</a>
+                            <a class="dropdown-item" href="#">Cadastro de Reservas</a>
                             <a class="dropdown-item" href="#">Lista de Reservas</a>
                         </div>
                     </div>
 
                     <div class="dropdown dropright">
                         <a class="collapse-item" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-hands-helping"></i></i> Gestão de Empréstimos
+                        <i class="fas fa-hand-holding"></i> Empréstimos
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="cadastros/emprestimos">Nova Empréstimo</a>
+                            <a class="dropdown-item" href="cadastros/emprestimos">Cadastro de Empréstimos</a>
                             <a class="dropdown-item" href="listar/emprestimos">Lista de Empréstimos</a>
                         </div>
                     </div>
@@ -73,7 +76,7 @@
                         <a class="collapse-item" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-calendar-plus"></i> Pessoas
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="cadastros/pessoas">Nova Pessoa</a>
+                            <a class="dropdown-item" href="cadastros/pessoas">Cadastro de Pessoas</a>
                             <a class="dropdown-item" href="listar/pessoas">Lista de Pessoas</a>
                         </div>
                     </div>
@@ -83,9 +86,9 @@
                         <i class="fas fa-hands-helping"></i></i> Funcionários
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="cadastros/funcionario">Novo Funcionário</a>
+                            <a class="dropdown-item" href="cadastros/funcionario">Cadastro de Funcionários</a>
                             <a class="dropdown-item" href="cadastros/funcao">Cadastro de funções</a>
-                            <a class="dropdown-item" href="cadastros/usuarios">Definir Login para funcionário</a>
+                            <a class="dropdown-item" href="cadastros/usuarios">Criação de Login</a>
                             <a class="dropdown-item" href="listar/funcionarios">Lista de Funcionários</a>
                         </div>
                     </div>
@@ -94,17 +97,22 @@
                         <i class="fas fa-house-user"></i> Moradores
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="cadastros/morador">Novo Morador</a>
+                            <a class="dropdown-item" href="cadastros/morador">Cadastro de moradores</a>
                             <a class="dropdown-item" href="listar/moradores">Lista de Moradores</a>
                         </div>
                     </div>
                     <div class="dropdown dropright">
                         <a class="collapse-item" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-building"></i> Eifício
+                        <i class="fas fa-building"></i> Edifício
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="cadastros/funcionario">Novo Morador</a>
-                            <a class="dropdown-item" href="cadastros/funcao">Lista de Moradores</a>
+                            <a class="dropdown-item" href="cadastros/vinculoMoradores">Vinculo de Moradores</a>
+                            <a class="dropdown-item" href="cadastros/blocos">Cadastro de Blocos Hábitacionais</a>
+                            <a class="dropdown-item" href="cadastros/apartamentos">Cadastro de Apartamentos</a>
+                            <a class="dropdown-item" href="cadastros/lazer">Cadastro de Áreas de Lazer</a>
+                            <a class="dropdown-item" href="listar/blocos">Lista de Blocos</a>
+                            <a class="dropdown-item" href="listar/apartamentos">Lista de Apartamentos</a>
+                            <a class="dropdown-item" href="listar/lazer">Lista de Área de Lazer</a>
                         </div>
                     </div>
                 </div>
