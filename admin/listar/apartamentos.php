@@ -12,6 +12,7 @@
                     <td>Id</td>
                     <td>Apartamento</td>
                     <td>Bloco</td>
+                    <td>Sigla</td>
                     <td>Morador</td>
                     <td>Opções</td>
                 </tr>
@@ -22,6 +23,7 @@
                         a.id as id,
                         a.numeroap as apartamento,
                         b.nome as bloco,
+                        b.sigla as sigla,
                         p.nome as morador
                     from
                         apartamento a
@@ -38,6 +40,7 @@
                             <td width="15px"><?=$dados->id?></td>
                             <td><?=$dados->apartamento?></td>
                             <td><?=$dados->bloco?></td>
+                            <td><?=$dados->sigla?></td>
                             <td><?=$dados->morador?></td>
                             <td width="200px" class="text-center">
                                 <a href="cadastros/vinculoMoradores/<?=$dados->id?>" title="Editar" class="btn btn-warning"><i class="fas fa-edit"></i>Alterar Morador</a>

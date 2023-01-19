@@ -9,17 +9,18 @@
     if($_POST){
 
 
-        $sql ="select id from apartamento where numeroap = :numeroap AND id <> :id limit 1";
+        $sql ="select id from apartamento where numeroap = :numeroap AND idbloco = :idbloco and id <> :id limit 1";
     
         $consulta = $pdo->prepare($sql);
         $consulta->bindParam(":numeroap", $numeroap);
+        $consulta->bindParam(":idbloco", $idbloco);
         $consulta->bindParam(":id", $id);
         $consulta->execute();
         
         $dados = $consulta->fetch(PDO::FETCH_OBJ);
     
         if(!empty($dados->id)){
-            mensagemErro("Já existe um apartamento com este número");
+            mensagemErro("O apartamento e o bloco informado já estão cadastrados no sistema, por favor valide as informações.");
         }
     
         if(empty($id)){
