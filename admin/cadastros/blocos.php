@@ -18,7 +18,7 @@
     }
 ?>
 
-<div class="card">
+<div class="card shadow">
     <div class="card-header">
         <h2 class="float-left">Cadastro de Blocos</h2>
         <div class="float-right">
