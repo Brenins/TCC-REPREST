@@ -1,7 +1,7 @@
 <?php
     if(!isset($page))exit;
 ?>
-
+//
 <div class="card shadow-lg">
     <div class="card-header">
         <h2 class="float-left">Lista de locais de lazer</h2>
