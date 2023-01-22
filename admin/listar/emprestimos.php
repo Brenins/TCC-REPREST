@@ -6,7 +6,7 @@
     <div class="card-header">
         <h2 class="float-left">Lista de Emprestimos</h2>
         <div class="float-right">
-            <a href="cadastros/reserva" title="Novo Empréstimo" class="btn btn-primary">
+            <a href="cadastros/emprestimos" title="Novo Empréstimo" class="btn btn-primary">
                 Nova Empréstimo
             </a>
         </div>
@@ -68,12 +68,14 @@
                                 <td><?=$dados->obs?></td>
                                 <td><?=$dados->criado?></td>
                                 <td><?=$dados->modificado?></td>
-                                <td width="100px" class="text-center">
+                                <td class="text-center">
                                     <a href="cadastros/emprestimos/<?=$dados->id?>" 
                                     title="Editar" class="btn btn-warning"><i class="fas fa-edit"></i>
-                                </a>
-                                    <!--  <a href="javascript:excluir(PASSAR O ID)" 
-                                    title="Excluir" class="btn btn-danger"><i class="fas fa-trash"></i></a> -->
+                                    </a>
+
+                                    <a href="cadastros/emprestimoStatus/<?=$dados->id?>" 
+                                    title="Atualizar Status" class="btn btn-primary"><i class="fas fa-edit"></i>
+                                    </a>
                                 </td>
                             </tr>
                         <?php
