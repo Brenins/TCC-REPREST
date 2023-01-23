@@ -1,6 +1,4 @@
 <?php
-
-    
     //Janela de Erro
     function mensagemErro($msg){
         ?>
@@ -16,7 +14,6 @@
         <?php
             exit;
     }//Fim da funcao
-
 
     function minhaData($data){
         $pedacos = explode("-", $data);
@@ -48,31 +45,91 @@
             exit;
     }//Fim da funcao
 
+    function cobrar($chave, $valor){
 
-    function enviarCobranca($chave, $valor, $nomeMorador, $telefone){
-        ?>
-        <script>
-            Swal.fire({
-                    imageUrl: 'images/zap.png',
-                    title: 'Verifique as informações antes de enviar!',
-                    html: 
-                    '<p>PIX: <?=$chave?></p>' + 
-                    '<p>Valor: R$<?=$valor?></p>' +
-                    '<p>Morador: <?=$nomeMorador?>' +
-                    '<p>WhatsApp: <?=$telefone?></p>',
-                    confirmButtonText: 'OK',
-                }).then((result) => {
-                    window.location.href = 'https://wa.me/55<?=$telefone?>?text=Olá, estamos te enviando a chave para pagamento do seus débitos no valor de R$<?=$valor?>, CHAVE PARA PAGAMENTO: <?=$chave?> ';
-                })
-        </script>    
-        
-        <?php
-            exit;
+
+        function mensagem1($valor){
+            $curl = curl_init();
+    
+            curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://app.whatsgw.com.br/api/WhatsGw/Send',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+    
+            $DATA = [
+                "apikey" => "55e52cd3-c124-4368-a534-074558eeb074",
+                "phone_number" => "554497019488",
+                "contact_phone_number" => "5544999624367",
+                "message_custom_id" => "perereca",
+                "message_type" => "text",
+                "message_body" => "REPREST GESTÃO: Uma cobrança foi gerada no valor de R$ $valor, para pagar utilize o código PIX abaixo.",
+                "check_status" => "1"
+            ],
+    
+            CURLOPT_POSTFIELDS => json_encode($DATA),
+            CURLOPT_HTTPHEADER => array(
+                'Content-Type: application/json'
+            ),
+            ));
+    
+            $response = curl_exec($curl);
+    
+            curl_close($curl);
+
+        }
+
+        function mensagem2($chave){
+            $pix = $chave;
+            $curl = curl_init();
+    
+            curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://app.whatsgw.com.br/api/WhatsGw/Send',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+    
+            $DATA = [
+                "apikey" => "55e52cd3-c124-4368-a534-074558eeb074",
+                "phone_number" => "554497019488",
+                "contact_phone_number" => "5544999624367",
+                "message_custom_id" => "perereca",
+                "message_type" => "text",
+                "message_body" => $pix,
+                "check_status" => "1"
+            ],
+    
+            CURLOPT_POSTFIELDS => json_encode($DATA),
+            CURLOPT_HTTPHEADER => array(
+                'Content-Type: application/json'
+            ),
+            ));
+    
+            $response = curl_exec($curl);
+    
+            curl_close($curl);
+        }
+
+        mensagem1($valor);
+        mensagem2($chave);
+
+        mensagemSucesso("cadastros/cobranca");
+
 
     }
 
+    function reenvioCobranca(){
 
 
+    }
 
     function mensagemSucesso($location){
         ?>
@@ -88,15 +145,6 @@
         <?php
             exit;
     }//Fim da funcao
-
-    function enviaZap($numero,$mensagem){
-        $url = "https://wa.me/$numero?text=$mensagem";
-        ?>
-        <script> window.open(<?=$url?>)</script>
-        <?php
-    }
-
-
 
 ?>
 

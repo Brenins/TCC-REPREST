@@ -74,7 +74,7 @@
                                     </a>
 
                                     <a href="cadastros/emprestimoStatus/<?=$dados->id?>" 
-                                    title="Atualizar Status" class="btn btn-primary"><i class="fas fa-edit"></i>
+                                    title="Atualizar Status" class="btn btn-primary"><i class="fas fa-bell"></i>
                                     </a>
                                 </td>
                             </tr>

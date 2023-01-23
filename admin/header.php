@@ -42,8 +42,8 @@
                         <i class="fas fa-calendar-plus"></i> Reservas
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Cadastro de Reservas</a>
-                            <a class="dropdown-item" href="#">Lista de Reservas</a>
+                            <a class="dropdown-item" href="cadastros/reserva">Cadastro de Reservas</a>
+                            <a class="dropdown-item" href="listar/reservas">Lista de Reservas</a>
                         </div>
                     </div>
 
@@ -150,8 +150,7 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="cadastros/pix"><img src="images/pix.svg" alt="pix" style="width: 18px;"> Configurar PIX</a>
-                <a class="collapse-item" href="listar/taxas"><i class="fas fa-percentage"></i> Taxas</a>
-                <a class="collapse-item" href="cadastros/cobranca"><i class="fas fa-file-invoice-dollar"></i> Geração de Multas <br> e Cobranças</a>
+                <a class="collapse-item" href="cadastros/cobranca"><i class="fas fa-percentage"></i> Gerador de cobranças</a>
             </div>
         </div>
     </li>
