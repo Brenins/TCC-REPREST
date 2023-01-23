@@ -150,7 +150,15 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="cadastros/pix"><img src="images/pix.svg" alt="pix" style="width: 18px;"> Configurar PIX</a>
-                <a class="collapse-item" href="cadastros/cobranca"><i class="fas fa-percentage"></i> Gerador de cobranças</a>
+                <div class="dropdown dropright">
+                        <a class="collapse-item" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-percentage"></i> Gerador de cobranças
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="cadastros/cobranca">Gerar cobrança</a>
+                            <a class="dropdown-item" href="listar/cobrancas">Lista de Cobranças</a>
+                        </div>
+                </div>
             </div>
         </div>
     </li>

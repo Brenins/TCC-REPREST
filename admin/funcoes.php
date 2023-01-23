@@ -14,6 +14,9 @@
         <?php
             exit;
     }//Fim da funcao
+    
+
+
 
     function minhaData($data){
         $pedacos = explode("-", $data);
