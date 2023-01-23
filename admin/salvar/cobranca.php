@@ -11,7 +11,13 @@
         $consultaAp->execute();
         $dadosAp = $consultaAp->fetch(PDO::FETCH_OBJ);
 
-        $apartamento = $dadosAp->id;
+        $apartamento = @$dadosAp->id;
+
+
+        if(empty($apartamento)){
+            mensagemErro("KKKKK TA ERRADO CARAI");
+        }
+
 
         $sql = "select chave, recebedor, CIDADE_REC as cidade from pix p limit 1";
         $consulta = $pdo->prepare($sql);
@@ -46,7 +52,7 @@
         $data = date("Y-m-d");
         $sql = "insert into cobranca (valor, tipo, data_cobranca, pix_cc, idapartamento) values (:valor, :tipo, :datac, :pix, :idapartamento)";
         $insert = $pdo->prepare($sql);
-        $insert->bindParam(":valor", $valorCobrado);
+        $insert->bindParam(":valor", $parte1);
         $insert->bindParam(":tipo", $tipo);
         $insert->bindParam(":datac", $data);
         $insert->bindParam(":pix", $chavePIX);

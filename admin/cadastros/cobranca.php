@@ -18,7 +18,7 @@
                 class="form-control">
                     <option value=""></option>
                     <?php
-                        $sql= "select m.id as idmorador, p.nome , p.telefone  from morador m join pessoa p on m.idpessoa = p.id where m.ativo = 's'";
+                        $sql= "select m.id as idmorador, p.nome , p.telefone  from apartamento a join morador m on a.IDMORADOR = m.ID join pessoa p on m.idpessoa = p.id where m.ativo = 's'";
                         $consulta = $pdo->prepare($sql);
                         $consulta->execute();
 
