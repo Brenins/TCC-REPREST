@@ -22,6 +22,7 @@
     <div class="card-header">
         <h2 class="float-left">Cadastro de Blocos</h2>
         <div class="float-right">
+            <a href="listar/blocos" class="float-right btn btn-primary"> Listar Blocos</a>
         </div>
     </div>
     <div class="card-body">
