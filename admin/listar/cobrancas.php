@@ -22,7 +22,7 @@
                     <td>Tipo</td>
                     <td>Data de Cobrança</td>
                     <td>Data Atualização</td>
-                    <td>Apartamento</td>
+                    <td>Morador</td>
                     <td>Status</td>
                     <td>Opções</td>
                 </tr>
@@ -41,21 +41,24 @@
                     ) {
                         $valor = number_format($dados->valor, 2, 
                         ",", ".");
+
+                        $d1 = minhaData($dados->dataC);
+                        $d2 = minhaData($dados->dataA);
                         ?>
                             <tr>
                                 <td><?=$dados->id?></td>
                                 <td>R$<?=$valor?></td>
                                 <td><?=$dados->tipo?></td>
-                                <td><?=$dados->dataC?></td>
-                                <td><?=$dados->dataA?></td>
+                                <td><?=$d1?></td>
+                                <td><?=$d2?></td>
                                 <td><?=$dados->apartamento?></td>
                                 <td><?=$dados->status?></td>
                                 <td class="text-center">
-                                    <a href="cadastros/categorias/<?=$dados->id?>" 
-                                    title="Editar" class="btn btn-warning"><i class="fas fa-edit"></i>
+                                    <a href="<?=reenvioCobranca($dados->pix,)?>" 
+                                    title="Reenviar Cobrança" class="btn btn-success"><i class="fas fa-paper-plane"></i>
                                     </a>
-                                    <a href="cadastros/categorias/<?=$dados->id?>" 
-                                    title="Editar" class="btn btn-primary"><i class="fas fa-edit"></i>
+                                    <a href="cadastros/statusCobranca/<?=$dados->id?>" 
+                                    title="Alterar Status de Cobranca" class="btn btn-primary"><i class="fas fa-edit"></i>
                                     </a>
                                 </td>
                             </tr>

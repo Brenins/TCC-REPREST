@@ -48,10 +48,10 @@
             exit;
     }//Fim da funcao
 
-    function cobrar($chave, $valor){
+    function cobrar($chave, $valor, $cell){
 
 
-        function mensagem1($valor){
+        function mensagem1($valor, $cell){
             $curl = curl_init();
     
             curl_setopt_array($curl, array(
@@ -67,7 +67,7 @@
             $DATA = [
                 "apikey" => "55e52cd3-c124-4368-a534-074558eeb074",
                 "phone_number" => "554497019488",
-                "contact_phone_number" => "5544999624367",
+                "contact_phone_number" => "55$cell",
                 "message_custom_id" => "perereca",
                 "message_type" => "text",
                 "message_body" => "REPREST GESTÃO: Uma cobrança foi gerada no valor de R$ $valor, para pagar utilize o código PIX abaixo.",
@@ -81,12 +81,12 @@
             ));
     
             $response = curl_exec($curl);
-    
+
             curl_close($curl);
 
         }
 
-        function mensagem2($chave){
+        function mensagem2($chave,$cell){
             $pix = $chave;
             $curl = curl_init();
     
@@ -103,7 +103,7 @@
             $DATA = [
                 "apikey" => "55e52cd3-c124-4368-a534-074558eeb074",
                 "phone_number" => "554497019488",
-                "contact_phone_number" => "5544999624367",
+                "contact_phone_number" => "55$cell",
                 "message_custom_id" => "perereca",
                 "message_type" => "text",
                 "message_body" => $pix,
@@ -117,12 +117,12 @@
             ));
     
             $response = curl_exec($curl);
-    
+            print_r(json_decode($response));
             curl_close($curl);
         }
 
-        mensagem1($valor);
-        mensagem2($chave);
+        mensagem1($valor, $cell);
+        mensagem2($chave, $cell);
 
         mensagemSucesso("cadastros/cobranca");
 

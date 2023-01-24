@@ -15,7 +15,7 @@
 
 
         if(empty($apartamento)){
-            mensagemErro("KKKKK TA ERRADO CARAI");
+            mensagemErro("O morador selecionado não possuí apartamento");
         }
 
 
@@ -49,17 +49,20 @@
         $chavePIX.="6304"; //Validador CRC
         $chavePIX.=crcChecksum($chavePIX);//Cria o checksum a partir do crc
 
+        $statusid = 3;
+
         $data = date("Y-m-d");
-        $sql = "insert into cobranca (valor, tipo, data_cobranca, pix_cc, idapartamento) values (:valor, :tipo, :datac, :pix, :idapartamento)";
+        $sql = "insert into cobranca (valor, tipo, data_cobranca, pix_cc, idapartamento, idstatus) values (:valor, :tipo, :datac, :pix, :idapartamento, :idstatus)";
         $insert = $pdo->prepare($sql);
         $insert->bindParam(":valor", $parte1);
         $insert->bindParam(":tipo", $tipo);
         $insert->bindParam(":datac", $data);
         $insert->bindParam(":pix", $chavePIX);
         $insert->bindParam(":idapartamento", $apartamento);
+        $insert->bindParam(":idstatus", $statusid);
         
         if($insert->execute()){
-            mensagemErro("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            cobrar($chavePIX, $valorCobrado,$cell);
         }
 
 
