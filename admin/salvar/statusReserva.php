@@ -7,18 +7,16 @@
     }
 
     if($_POST){
-            
-        $data_mod = date("Y-m-d");
 
-        $sql = "update cobranca set idstatus = :status, 
-        data_atualizacao = :data where id = :id limit 1";
+        $sql = "update reserva set idstatus = :status, 
+        modificado = :modificado where id = :id limit 1";
         $insert = $pdo->prepare($sql);
-        $insert->bindParam(":id", $idcobranca);
+        $insert->bindParam(":id", $idreserva);
         $insert->bindParam(":status", $status);
-        $insert->bindParam(":data", $data_mod);
+        $insert->bindParam(":modificado", $_SESSION['usuario']['login']);
 
         if($insert->execute()){
-            mensagemSucesso("listar/cobrancas");
+            mensagemSucesso("listar/reservas");
         }else{
             mensagemErro("Erro ao atualizar.");
         }

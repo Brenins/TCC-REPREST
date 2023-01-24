@@ -40,7 +40,7 @@
             mensagemErro("A data final informada é menor que a data de hoje.");
         }
         
-        $statusDefault = 1;
+        $statusDefault = 5;
 
         if(empty($id)){
             $sql = "insert into reserva (descricao, dtinicio, dtfim, obs, criado,idstatus, idlocal, idapartamento) 

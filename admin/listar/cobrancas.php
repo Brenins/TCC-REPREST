@@ -32,8 +32,28 @@
                 <?php
                     //Selecionar todas as categorias
                     
-                    $consulta = $pdo->prepare("select id, valor, tipo, data_cobranca as dataC, data_atualizacao as dataA, pix_cc as pix, idapartamento as apartamento, idstatus as status 
-                    from tcc.cobranca");
+                    $consulta = $pdo->prepare("
+                        select
+                            c.id,
+                            c.valor,
+                            c.tipo,
+                            c.data_cobranca as dataC,
+                            c.data_atualizacao as dataA,
+                            c.pix_cc as pix,
+                            p.NOME as morador,
+                            s.status as status_name,
+                            p.telefone as celular
+                        from
+                            cobranca c
+                        left join apartamento a 
+                            on c.IDAPARTAMENTO = a.ID 
+                        left join morador m
+                            on m.ID = a.IDMORADOR 
+                        left join status s
+                            on s.id = c.idstatus
+                        left join pessoa p
+                            on p.id = m.IDPESSOA ;
+                    ");
 
                     $consulta->execute();
 
@@ -51,10 +71,10 @@
                                 <td><?=$dados->tipo?></td>
                                 <td><?=$d1?></td>
                                 <td><?=$d2?></td>
-                                <td><?=$dados->apartamento?></td>
-                                <td><?=$dados->status?></td>
+                                <td><?=$dados->morador?></td>
+                                <td><?=$dados->status_name?></td>
                                 <td class="text-center">
-                                    <a href="<?=reenvioCobranca($dados->pix,)?>" 
+                                    <a href="salvar/reenviar/<?=$dados->id?>"
                                     title="Reenviar Cobrança" class="btn btn-success"><i class="fas fa-paper-plane"></i>
                                     </a>
                                     <a href="cadastros/statusCobranca/<?=$dados->id?>" 

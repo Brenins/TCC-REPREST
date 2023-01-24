@@ -65,7 +65,7 @@
                                 <td><?=$dados->morador?></td>
                                 <td><?=$dados->obs?></td>
                                 <td width="100px" class="text-center">
-                                    <a href="cadastros/reservaStatus/<?=$dados->id?>" 
+                                    <a href="cadastros/statusReserva/<?=$dados->id?>" 
                                     title="Editar" class="btn btn-warning"><i class="fas fa-edit"></i>
                                 </a>
                                     <!--  <a href="javascript:excluir(PASSAR O ID)" 
