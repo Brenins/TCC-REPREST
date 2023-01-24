@@ -14,6 +14,18 @@
         <?php
             exit;
     }//Fim da funcao
+    function mensagemErro3($msg){
+        ?>
+        <script>
+            Swal.fire({
+                icon: 'info',
+                title: 'Foi Retornado um Aviso ao enviar a mensagem.',
+                text: '<?=$msg?>',
+            })
+        </script>
+        <?php
+            exit;
+    }//Fim da funcao
     
 
 
@@ -81,8 +93,11 @@
             ));
     
             $response = curl_exec($curl);
-
+            print_r($response);
+  
             curl_close($curl);
+            
+
 
         }
 
@@ -117,8 +132,12 @@
             ));
     
             $response = curl_exec($curl);
-            print_r(json_decode($response));
+
+            print_r($response);
             curl_close($curl);
+
+
+            
         }
 
         mensagem1($valor, $cell);

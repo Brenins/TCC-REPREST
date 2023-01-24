@@ -64,9 +64,7 @@
         if($insert->execute()){
             cobrar($chavePIX, $valorCobrado,$cell);
         }
-
-
-        //cobrar($chavePIX, $valorCobrado);
      
     }
 ?>
+
