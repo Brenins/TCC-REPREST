@@ -5,6 +5,7 @@
 <div class="card shadow-lg">
     <div class="card-header">
         <h2 class="float-left">Lista de locais de lazer</h2>
+        <a href="cadastros/lazer" class="float-right btn btn-primary"> Cadastrar Locais</a>
     </div>
 
     <div class="card-body">

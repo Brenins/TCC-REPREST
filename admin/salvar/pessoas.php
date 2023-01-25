@@ -17,7 +17,7 @@
         $cpf = formataCPF($cpf);
 
        
-        $sql ="select id from pessoa where cpf = :cpf AND id <> :idpessoa limit 1";
+        $sql ="select id, telefone from pessoa where cpf = :cpf AND id <> :idpessoa limit 1";
 
         $cpfDuplicado = $pdo->prepare($sql);
         $cpfDuplicado->bindParam(":cpf", $cpf);
@@ -26,9 +26,29 @@
         
         $dados = $cpfDuplicado->fetch(PDO::FETCH_OBJ);
 
+        $celularFormatado = formataCPF($celular);
+
+        $sql = "select id from pessoa where telefone = :telefone and id <> :idpessoa limit 1";
+        $validaCelular = $pdo->prepare($sql);
+        $validaCelular->bindParam(":idpessoa", $id);
+        $validaCelular->bindParam(":telefone", $celularFormatado);
+        $validaCelular->execute();
+
+        $vl = $validaCelular->fetch(PDO::FETCH_OBJ);
+
+
+
+        if(!empty($vl)){
+            mensagemErro("Este telefone já é utilizado por outro cadastro no sistema, insira um telefone válido");
+        }
+
         if(!empty($dados->id)){
             mensagemErro("Já existe uma pessoa com o CPF informado, por favor insira outro.");
         }
+
+
+
+
 
 
         function validaCPF($cpf) {

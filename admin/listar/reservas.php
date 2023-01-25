@@ -20,7 +20,8 @@
                     <td>Inicio Reserva</td>
                     <td>Fim Reserva</td>
                     <td>Status</td>
-                    <td>Reservado para:</td>
+                    <td>Reservado para</td>
+                    <td>Local Reservado</td>
                     <td>Obs</td>
                     <td>Opções</td>
                 </tr>
@@ -28,27 +29,28 @@
             <tbody>
                 <?php
                     $consulta = $pdo->prepare("select
-                            r.id as id ,
-                            r.descricao as descricao ,
-                            r.dtinicio as inicio ,
-                            r.dtfim as fim,
-                            s.status as status,
-                            p.nome as morador,
-                            r.obs as obs
-                        from
-                            reserva r
-                        join apartamento a on
-                            r.idapartamento = a.id
-                        join morador m on
-                            a.idmorador = m.id
-                        join pessoa p on
-                            m.idpessoa = p.id
-                        join `local` l on
-                            r.idlocal = l.id
-                        join status s on
-                            r.idstatus = s.id
-                        order by
-                            r.id");
+                        r.id as id ,
+                        r.descricao as descricao ,
+                        r.dtinicio as inicio ,
+                        r.dtfim as fim,
+                        s.status as status,
+                        l.nome as local,
+                        p.nome as morador,
+                        r.obs as obs
+                    from
+                        reserva r
+                    join apartamento a on
+                        r.idapartamento = a.id
+                    join morador m on
+                        a.idmorador = m.id
+                    join pessoa p on
+                        m.idpessoa = p.id
+                    join `local` l on
+                        r.idlocal = l.id
+                    join status s on
+                        r.idstatus = s.id
+                    order by
+                    r.id");
                     $consulta->execute();
 
                     while($dados = $consulta->fetch(PDO::FETCH_OBJ)
@@ -63,6 +65,7 @@
                                 <td><?=$dataFim?></td>
                                 <td><?=$dados->status?></td>
                                 <td><?=$dados->morador?></td>
+                                <td><?=$dados->local?></td>
                                 <td><?=$dados->obs?></td>
                                 <td width="100px" class="text-center">
                                     <a href="cadastros/statusReserva/<?=$dados->id?>" 

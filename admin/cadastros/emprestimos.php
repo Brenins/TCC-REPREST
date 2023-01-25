@@ -71,20 +71,32 @@
             class="form-control">
                 <option value=""></option>
                 <?php
-
-                    $sql= "select a.id as id , a.numeroap as apartamento , p.nome as morador  
-                    from apartamento a left join morador m on a.idmorador = m.id 
-                    left join pessoa p on m.idpessoa = p.id ";
+                    $sql= "
+                        select
+                            a.id as id ,
+                            a.numeroap as apartamento ,
+                            b.nome as bloco,
+                            p.nome as morador
+                        from
+                            apartamento a
+                        left join bloco b 
+                            on a.idbloco = b.id 
+                        left join morador m on
+                            a.idmorador = m.id
+                        left join pessoa p on
+                            m.idpessoa = p.id
+                    ";
                     $consulta = $pdo->prepare($sql);
                     $consulta->execute();
 
                     while ($dados = $consulta->fetch(PDO::FETCH_OBJ)){
-                        //Separar dados
-                        $id = $dados->id;
-                        $apartamento = $dados->apartamento;
-                        $morador = $dados->morador;
+                    //Separar dados
+                    $id = $dados->id;
+                    $apartamento = $dados->apartamento;
+                    $morador = $dados->morador;
+                    $bloco = $dados->bloco;
 
-                        echo "<option value='{$id}'>$morador - Apartamento: $apartamento</option>";
+                        echo "<option value='{$id}'>$morador - Apartamento: $apartamento - Bloco: $bloco</option>";
                     }
                 ?>
             </select>
