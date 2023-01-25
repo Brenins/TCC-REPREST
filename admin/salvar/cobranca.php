@@ -29,9 +29,9 @@
         $chaveSistema = $dados->chave;
         $recebedor = $dados->recebedor;
         
-        $parte1 = str_replace('.','',$valor);
+        $valor = str_replace('.','',$valor);
 
-        $valorCobrado = str_replace(',','.',$parte1);
+        $valor = str_replace(',','.',$valor);
 
         //Estrutura do PIX
         $pix[00]="01";                  //Define se pode ser reutilizada para pagamento
@@ -39,7 +39,7 @@
         $pix[26][01]=$chaveSistema;    //Chave Pix (CPF,CNPJ,TELEFONE,ETC)
         $pix[52]="0000";               //Identificador MERCHANT CATEGORY CODE
         $pix[53]="986";                //Tipo de moeda de transação (BRL)
-        $pix[54]="$valorCobrado";
+        $pix[54]="$valor";
         $pix[58]="BR";                 //Codigo do Pais (Brasil)
         $pix[59]=$recebedor;            //Nome do recebedor
         $pix[60]=$cidade;       //Cidade do recebedor
@@ -52,9 +52,10 @@
         $statusid = 3;
 
         $data = date("Y-m-d");
+
         $sql = "insert into cobranca (valor, tipo, data_cobranca, pix_cc, idapartamento, idstatus) values (:valor, :tipo, :datac, :pix, :idapartamento, :idstatus)";
         $insert = $pdo->prepare($sql);
-        $insert->bindParam(":valor", $parte1);
+        $insert->bindParam(":valor", $valor);
         $insert->bindParam(":tipo", $tipo);
         $insert->bindParam(":datac", $data);
         $insert->bindParam(":pix", $chavePIX);
@@ -62,7 +63,7 @@
         $insert->bindParam(":idstatus", $statusid);
         
         if($insert->execute()){
-            cobrar($chavePIX, $valorCobrado,$cell);
+            cobrar($chavePIX, $valor,$cell);
         }
      
     }
