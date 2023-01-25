@@ -9,6 +9,7 @@
     <div class="card-header">
         <h2 class="float-left">Cadastro de Apartamento</h2>
         <div class="float-right">
+            <a href="listar/apartamentos" class="float-right btn btn-primary"> Listar Apartamentos</a>
         </div>
     </div>
     <div class="card-body">

@@ -6,7 +6,7 @@
     <div class="card-header">
         <h2 class="float-left">Lista de blocos habitacionais</h2>
         <div class="float-right">
-            </ul>
+            <a href="cadastros/blocos" class="float-right btn btn-primary"> Cadastrar Bloco</a>
         </div>
     </div>
     <div class="card-body">

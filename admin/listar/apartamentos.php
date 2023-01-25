@@ -4,6 +4,7 @@
 <div class="card shadow-lg">
     <div class="card-header">
         <h2 class="float-left">Lista de Apartamentos</h2>
+        <a href="cadastros/apartamentos" class="float-right btn btn-primary"> Cadastrar Apartamento</a>
     </div>
     <div class="card-body">
         <table class="table table-bordered table-hover table-striped">
