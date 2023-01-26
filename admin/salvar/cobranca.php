@@ -63,6 +63,7 @@
         $insert->bindParam(":idstatus", $statusid);
         
         if($insert->execute()){
+
             cobrar($chavePIX, $valor,$cell);
         }
      

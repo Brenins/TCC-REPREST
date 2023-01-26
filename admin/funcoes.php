@@ -93,7 +93,7 @@
             ));
     
             $response = curl_exec($curl);
-            print_r($response);
+            print_r("OK");
   
             curl_close($curl);
             
@@ -132,19 +132,18 @@
             ));
     
             $response = curl_exec($curl);
-
-            print_r($response);
+            print_r("OK");
+            //print_r($response);
             curl_close($curl);
 
 
             
         }
 
+        
         mensagem1($valor, $cell);
         mensagem2($chave, $cell);
-
-        mensagemSucesso("cadastros/cobranca");
-
+        mensagemSucesso('listar/cobrancas');
 
     }
 
@@ -154,6 +153,7 @@
     }
 
     function mensagemSucesso($location){
+        sleep(3);
         ?>
         <script>
             Swal.fire({

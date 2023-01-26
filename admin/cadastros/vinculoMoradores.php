@@ -51,7 +51,7 @@
                             $consulta->bindParam(":id",$id);
                         }else{
                             $sql= "select a.ID as id, a.NUMEROAP as apartamento, 
-                           b.NOME as bloco from apartamento a 
+                            b.NOME as bloco from apartamento a 
                             join bloco b on b.id = a.IDBLOCO where a.IDMORADOR is null 
                             order by b.nome, a.NUMEROAP";
                             $consulta = $pdo->prepare($sql);
